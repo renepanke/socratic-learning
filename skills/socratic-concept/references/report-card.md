@@ -12,11 +12,11 @@ Target: level 3 (Deep) · Reached: level 2 (Working)
 |---|---|---|---|---|
 | <part> | 3 | 3 | Derived the cost of a range query unprompted | independent |
 | <part> | 3 | 2 | Correct explanation; boundary case only after a direct hint | with help |
-| <part> | 3 | – | Not covered | not tested |
+| <part> | 3 | none | Not covered | not tested |
 
-**Worked out yourself:** 1–3 points, phrased as what they did.
+**Worked out yourself:** 1 to 3 points, phrased as what they did.
 **Still shaky:** each spot, with the question that would test it next time.
-**Next step:** one concrete thing — a question to try, or the next level.
+**Next step:** one concrete thing: a question to try, or the next level.
 ```
 
 Rating rules:
@@ -34,3 +34,6 @@ Rating rules:
 - **Evidence** is one concrete line about what the user did. No adjectives, no
   praise.
 - Table plus the three short blocks, nothing else. No closing pep talk.
+- **Write it in the flavored mode** of `references/writing.md`. If you can run
+  Python and it is in English, lint it with `scripts/ste-lint.py`, fix, and
+  lint again.

@@ -47,11 +47,11 @@ Updated: <date>
 | Unit | Depends on | Target | Reached | How solid | Last session |
 |---|---|---|---|---|---|
 | <unit> | <units> | 3 | 2 | with help | <date> |
-| <unit> | <units> | 2 | 2 | placement | – |
-| <unit> | <units> | 2 | – | not tested | – |
+| <unit> | <units> | 2 | 2 | placement | none |
+| <unit> | <units> | 2 | none | not tested | none |
 
 ## Still shaky
-- <unit>: <spot> — <passage to reread> — <question that would test it>
+- <unit>: <spot>. Reread: <passage>. Test: <question that would test it>
 
 ## Open flagged items
 - <item from the flagged list that was still open at the end of a session>
@@ -69,5 +69,7 @@ Rules:
   user's say-so alone.
 - **On resume**, open with one check question on the most recent shaky spot or
   open flagged item, before anything new. Delayed repetition is the point.
+- **Write it in the flavored mode** of `references/writing.md`, and lint it
+  like the report card.
 - **The file is the user's.** If they edited it, take their edits as the current
   state.

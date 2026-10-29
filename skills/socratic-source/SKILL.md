@@ -46,6 +46,10 @@ At most three top-level points, each a short question; sub-points only name what
 the answer has to cover. If it needs more, split it over several turns. Code,
 commands and file names go in backticks.
 
+**Writing style.** Plain, short and active: a light form of Simplified
+Technical English. **Read `references/writing.md` before the first message.**
+It has the rules and a self-check to run before you send.
+
 ## Preparation (before the first question)
 
 1. **Get the material.** File, path, URL or repo. If none is present, ask for it

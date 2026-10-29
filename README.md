@@ -30,6 +30,10 @@ Both share the same core:
   target level per area, and one area per session. Progress is kept in
   `learning/<topic>.md` in your working directory; on Claude.ai, without file
   access, you get the progress block to paste into the next session.
+- **Plain writing** — the tutor's messages, report card and progress file
+  follow a light form of Simplified Technical English: short sentences,
+  active voice, one name per thing, no filler. A bundled linter checks the
+  English report card and progress file.
 
 `socratic-source` adds a section plan, an extra "point, don't hint" rung, critique
 questions, and a running list of weak spots that gets re-asked at the end.
@@ -118,22 +122,34 @@ skills/
     references/levels.md        the 0–4 scale and how to ask for it
     references/report-card.md   report card format and rating rules
     references/large-topics.md  multi-session topics and the progress file
+    references/writing.md       writing style rules and self-check
+    scripts/ste-lint.py         style linter (from ste-writing, MIT)
   socratic-source/
     SKILL.md
     references/levels.md
     references/report-card.md
     references/large-material.md
+    references/writing.md
+    scripts/ste-lint.py
 install.sh           plain-skill install and zip packaging (macOS/Linux)
 install.ps1          same for Windows PowerShell
 ```
 
 Keep `version` in `plugin.json` and `.claude-plugin/plugin.json` in sync.
 
-Each skill is self-contained, so `levels.md` and `report-card.md` exist in both
-with near-identical content. When you change one, change the other too.
+Each skill is self-contained, so `levels.md`, `report-card.md`, `writing.md`
+and `ste-lint.py` exist in both with near-identical content. When you change one, change the other too.
 
 ## Adding a skill
 
 Create `skills/<name>/SKILL.md` with `name` and `description` frontmatter. The
 description decides when the skill triggers — include both the trigger phrases
 and the explicit "Do NOT use when" cases.
+
+## Credits
+
+The writing rules in `references/writing.md` are adapted from
+[ste-writing](https://github.com/1fc0nfig/ste-writing) by Ege Çelebi and Matyas
+Cerny (MIT). `scripts/ste-lint.py` is copied unchanged from that repository,
+with its license notice at the top of the file. ASD-STE100 is a specification of
+ASD. This project is not affiliated with ASD.

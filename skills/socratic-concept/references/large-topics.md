@@ -50,11 +50,11 @@ Updated: <date>
 | Area | Depends on | Target | Reached | How solid | Last session |
 |---|---|---|---|---|---|
 | <area> | <areas> | 3 | 2 | with help | <date> |
-| <area> | <areas> | 1 | 1 | placement | – |
-| <area> | <areas> | 2 | – | not tested | – |
+| <area> | <areas> | 1 | 1 | placement | none |
+| <area> | <areas> | 2 | none | not tested | none |
 
 ## Still shaky
-- <area>: <spot> — <question that would test it>
+- <area>: <spot>. Test: <question that would test it>
 
 ## Next
 <the area and level suggested for the next session, and why>
@@ -69,5 +69,7 @@ Rules:
   user's say-so alone.
 - **On resume**, open with one check question on the most recent shaky spot in
   the file, before anything new. Delayed repetition is the point.
+- **Write it in the flavored mode** of `references/writing.md`, and lint it
+  like the report card.
 - **The file is the user's.** If they edited it, take their edits as the current
   state.

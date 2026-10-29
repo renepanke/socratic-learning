@@ -8,11 +8,11 @@ language. Same wording every time, so the numbers keep their meaning across
 questions and sessions:
 
 ```
-0  New       – I know the name at most
-1  Overview  – I can say what it is and what it is for
-2  Working   – I can use it in ordinary cases
-3  Deep      – I know why it works and where it breaks
-4  Mastery   – I can teach it, critique it, carry it over
+0  New: I know the name at most
+1  Overview: I can say what it is and what it is for
+2  Working: I can use it in ordinary cases
+3  Deep: I know why it works and where it breaks
+4  Mastery: I can teach it, critique it, carry it over
 ```
 
 Ask for a number only with this block in the same message — never a bare "1,

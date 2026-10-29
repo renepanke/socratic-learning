@@ -12,12 +12,12 @@ Target: level 2 (Working) · Reached: level 2 (5 of 6 sections tested)
 |---|---|---|---|---|
 | <section> | 2 | 2 | Connected the sampling choice to the bias in section 5 unprompted | independent |
 | <section> | 3 | 2 | Summary correct; missed the unstated assumption until pointed to it | with help |
-| <section> | 2 | – | Not covered | not tested |
+| <section> | 2 | none | Not covered | not tested |
 
-**Worked out yourself:** 1–3 points, phrased as what they did.
+**Worked out yourself:** 1 to 3 points, phrased as what they did.
 **Still shaky:** each spot, with the passage to reread and the question that would test it.
-**Flagged list:** each flagged item — resolved at the end, or still open.
-**Next step:** one concrete thing — a section, a question, or the next level.
+**Flagged list:** each flagged item: resolved at the end, or still open.
+**Next step:** one concrete thing: a section, a question, or the next level.
 ```
 
 For exam prep, add one line: **If the exam were today:** which sections would
@@ -38,3 +38,6 @@ Rating rules:
 - **Evidence** is one concrete line about what the user did. No adjectives, no
   praise.
 - Table plus the short blocks, nothing else. No closing pep talk.
+- **Write it in the flavored mode** of `references/writing.md`. If you can run
+  Python and it is in English, lint it with `scripts/ste-lint.py`, fix, and
+  lint again.

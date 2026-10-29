@@ -58,6 +58,10 @@ At most three top-level points, each a short question; sub-points only name what
 the answer has to cover. If it needs more, split it over several turns. Code,
 commands and file names go in backticks.
 
+**Writing style.** Plain, short and active: a light form of Simplified
+Technical English. **Read `references/writing.md` before the first message.**
+It has the rules and a self-check to run before you send.
+
 ## Flow
 
 If the topic is too large for one session ("Java programming", "statistics"), or
