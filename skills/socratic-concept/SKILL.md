@@ -1,6 +1,6 @@
 ---
 name: socratic-concept
-description: Use when the user wants to genuinely understand a concept, mechanism or idea rather than be told the answer — "explain X to me", "I want to understand X", "socratic", "quiz me on this". Drives understanding through questions, with a diagnosis first, an escalation ladder when stuck, and an explicit exit test. Do NOT use when the user just wants a fast factual answer, is debugging under time pressure, or asks for a summary.
+description: Use when the user wants to genuinely understand a concept, mechanism or idea rather than be told the answer — "explain X to me", "I want to understand X", "socratic", "quiz me on this". Drives understanding through questions, with a diagnosis and a chosen depth level first, an escalation ladder when stuck, an explicit exit test, and a closing report card. Do NOT use when the user just wants a fast factual answer, is debugging under time pressure, or asks for a summary.
 ---
 
 # Socratic Learning — Concepts
@@ -32,7 +32,8 @@ them artificially just makes the session drag.
 ### 1. Diagnosis (always first, exactly one turn)
 
 Ask the user what they **think they already know** about the topic, explicitly
-including the shaky parts. Two sentences is enough from them.
+including the shaky parts. Two sentences is enough from them. In the same turn,
+offer the depth levels (see **Depth levels** below) and let them pick one.
 
 Read that answer for three things:
 - Which part is solid?
@@ -41,6 +42,10 @@ Read that answer for three things:
 
 The first real question starts at that edge, not at the textbook beginning. If the
 user is already at step four, do not start at step one.
+
+From here on, keep a running list of the 2–5 **parts** of the concept that come
+up, and for each one the highest level the user has shown and at which rung. The
+report card is built from this list.
 
 ### 2. The question loop
 
@@ -65,7 +70,7 @@ through: "What exactly gets faster, and by what mechanism?"
 ### 3. The escalation ladder
 
 Two failed attempts in a row on the same question → **drop one rung**. Do not keep
-drilling at the same level; that is the point where socratic questioning turns
+drilling at the same rung; that is the point where socratic questioning turns
 into hazing.
 
 | Rung | Move |
@@ -85,16 +90,89 @@ point. The second time, explain without negotiating. It is their learning time.
 
 ### 4. The exit
 
-Only finish when **both** hold:
+Only finish when the exit test of the **target level** holds (see **Depth
+levels**). In every level that means at least: the user explains the core in
+**their own** words, unprompted — not yours played back. From level 2 up, the
+case they handle must be **new**, one you have not discussed. That is the real
+test: recall can be faked, transfer cannot.
 
-- The user explains the core in **their own** words, unprompted — not yours
-  played back.
-- They correctly handle a **new** boundary case you have not discussed. This is
-  the real test: recall can be faked, transfer cannot.
+When it holds: issue the report card (see **Report card**), then stop — do not
+tack on another round out of politeness.
 
-When both hold: a short summary of what *they* worked out (not what you
-explained), plus the one or two spots still wobbly. Then stop — do not tack on
-another round out of politeness.
+## Depth levels
+
+The user picks how deep to go. Each level is defined by what they can **do** at
+the end, and that is exactly what its exit test checks.
+
+| Level | Name | At the end you can … | Exit test |
+|---|---|---|---|
+| 1 | Overview | say in your own words what it is and what it is for | Own-words explanation of the core |
+| 2 | Working | use it on ordinary cases and predict what happens | Level 1 + correct prediction on a new ordinary case |
+| 3 | Deep | say why it works, where it breaks, and how it differs from its neighbours | Level 2 + correct handling of a new boundary case |
+| 4 | Mastery | teach it, critique it, and carry it into another domain | Level 3 + finds and fixes a misconception you play as a learner, + a transfer to an unrelated domain |
+
+**Offering it.** One line per level, in the user's language, phrased as "at the
+end you can …" — not the names alone, which mean nothing to them. If they do not
+pick, take level 3 and say so in one sentence. If a goal is obvious from context
+("for my exam on Friday", "just so I can follow the meeting"), suggest the
+matching level instead of asking blind.
+
+**What it changes.** The level sets the question mix and the exit test, nothing
+else — the contract and the ladder stay the same at every level.
+
+- Level 1: mostly purpose and discrimination. No boundary cases.
+- Level 2: add prediction on ordinary cases.
+- Level 3: add counter-example and boundary.
+- Level 4: add critique, derivation ("how would you have invented this?") and
+  role reversal: you play a learner with a plausible misconception, they teach.
+
+**Holding to it.**
+
+- Stop at the target. Dragging a level-1 learner through boundary cases is the
+  same failure as explaining too early, in the other direction.
+- If the user reaches the target early, offer once, in one sentence: stop here
+  with the report card, or one level up.
+- If the diagnosis already shows the target is met, say so and offer either the
+  next level or a check-only run that goes straight to the exit test.
+- The user can change the level any time ("go deeper", "that's enough"). Adjust
+  without discussion.
+
+## Report card
+
+Issue it at the end — and also when the user stops early. It records what the
+user **showed** in this session, not what was talked about. Write it in the
+user's language, in this shape:
+
+```
+## Report card: <topic>
+Target: level 3 (Deep) · Reached: level 2 (Working)
+
+| Part | Target | Reached | Evidence | How solid |
+|---|---|---|---|---|
+| <part> | 3 | 3 | Derived the cost of a range query unprompted | independent |
+| <part> | 3 | 2 | Correct explanation; boundary case only after a direct hint | with help |
+| <part> | 3 | – | Not covered | not tested |
+
+**Worked out yourself:** 1–3 points, phrased as what they did.
+**Still shaky:** each spot, with the question that would test it next time.
+**Next step:** one concrete thing — a question to try, or the next level.
+```
+
+Rating rules:
+
+- **A level counts only once its exit test was passed.** Recall, agreement with
+  you, or a topic merely being discussed does not count.
+- **How solid**: *independent* = passed at rung 1–2; *with help* = passed only
+  after rung 3–5 (including a transfer question after an explanation);
+  *not tested* = never put to an exit test.
+- *With help* still counts as reached in the table, but it always also appears
+  under **Still shaky**.
+- **The overall level is the lowest reached level among the tested parts.** No
+  averaging, no rounding up. If untested parts belong to the core, say so on the
+  Reached line ("level 2, 3 of 4 parts tested").
+- **Evidence** is one concrete line about what the user did. No adjectives, no
+  praise.
+- Table plus the three short blocks, nothing else. No closing pep talk.
 
 ## Gotchas
 
@@ -104,6 +182,9 @@ another round out of politeness.
   thinking dead. Prefer: "That holds for this case. And if ...?"
 - **Match the user's pace.** Crisp answers mean bigger steps. Otherwise the skill
   just slows down something they already knew.
+- **Do not inflate the report card.** A generous grade feels kind and is useless:
+  the user plans their next step on it. When in doubt, the lower level and
+  *with help*.
 - **Do not apply under real time pressure.** If the user is mid-problem and needs
   an answer, this is the wrong tool. Offer once to do it socratically later, then
   answer normally.

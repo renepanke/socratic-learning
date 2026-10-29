@@ -17,7 +17,14 @@ Both share the same core:
 - **One question per turn** — prediction, counter-example, purpose, discrimination, boundary.
 - **Escalation ladder** — two failed attempts drop one rung, down to a short
   explanation, followed immediately by a transfer question.
-- **Explicit exit** — your own words plus a new boundary case you handle correctly.
+- **Depth levels** — you pick how far to go: 1 Overview, 2 Working, 3 Deep,
+  4 Mastery. Each level is defined by what you can do at the end, and that is
+  its exit test.
+- **Explicit exit** — your own words, plus whatever the chosen level demands (a
+  new case, a boundary case, teaching it back).
+- **Report card** — at the end, or whenever you stop: per part or section, the
+  level reached, the evidence for it, and whether it was independent or only
+  with help. Only what you showed counts.
 
 `socratic-source` adds a section plan, an extra "point, don't hint" rung, critique
 questions, and a running list of weak spots that gets re-asked at the end.

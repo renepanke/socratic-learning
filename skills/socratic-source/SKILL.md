@@ -1,6 +1,6 @@
 ---
 name: socratic-source
-description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan, questions section by section, and tracks what is still weak. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
+description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan with a chosen depth level, questions section by section, tracks what is still weak, and closes with a report card. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
 ---
 
 # Socratic Learning — Against Material
@@ -27,13 +27,17 @@ another language.
 3. **Build a section plan** — 4 to 8 units, in dependency order, not necessarily
    document order. What builds on something else comes later.
 4. **Show the plan** and let the user pick the entry point. They know better than
-   you where it hurts. For an exam topic, also ask how much time they have — that
-   sets the depth per section.
+   you where it hurts. In the same turn, offer the depth levels (see **Depth
+   levels** below). For an exam topic, also ask how much time they have and what
+   the exam asks for — that decides the level.
 
 For code, additionally: identify the entry point, the data flow, and the place
 where the actual decision is made. Question that, not syntax.
 
 ## Per section
+
+For each section, keep track of the highest level the user has shown and at which
+rung. The report card is built from this.
 
 ### 1. Anchor
 
@@ -51,7 +55,7 @@ tied to content:
 - "This function would work without the cache. Why is it there?"
 - "The paper measures A. What question does that measurement *not* answer?"
 
-### 3. Critique (for papers and design decisions)
+### 3. Critique (for papers and design decisions, from level 3 up)
 
 Understanding is not agreement. At least one question per section that makes the
 user test the material: what is evidenced versus asserted? Where is the weak
@@ -66,7 +70,7 @@ better than immediate, and it does not break the flow.
 ## Escalation
 
 Two failed attempts in a row on the same question → **drop one rung**. Do not keep
-drilling at the same level.
+drilling at the same rung.
 
 | Rung | Move |
 |---|---|
@@ -87,12 +91,86 @@ it; the second time, explain without negotiating.
 
 ## Exit
 
-Per section: move on when the user summarises it in their own words **and**
-answers a question that connects two sections.
+Per section: move on when the section passes the exit test of its target level
+(see **Depth levels**). At every level that includes a summary in the user's own
+words; from level 2 up, also a question that connects two sections.
 
-For the session overall: work through the flagged list, then give an honest final
-assessment — what is solid, what is shaky, what you never touched. No sugar
-coating; for exam prep an over-optimistic read is more damaging than a harsh one.
+For the session overall: work through the flagged list, then issue the report
+card (see **Report card**). No sugar coating; for exam prep an over-optimistic
+read is more damaging than a harsh one.
+
+## Depth levels
+
+The user picks how deep to go. Each level is defined by what they can **do** at
+the end, and that is exactly what its exit test checks — applied per section.
+
+| Level | Name | At the end you can … | Exit test per section |
+|---|---|---|---|
+| 1 | Overview | say what the section claims or does, and why it is there | Own-words summary |
+| 2 | Working | use it and connect it to the rest of the material | Level 1 + a question connecting two sections |
+| 3 | Deep | say why it holds, what it assumes, and where it breaks | Level 2 + correct handling of a case the material does not discuss |
+| 4 | Mastery | defend it, attack it, and teach it | Level 3 + holds it against the strongest counter-position, + finds and fixes a misreading you play as a learner |
+
+**Offering it.** One line per level, in the user's language, phrased as "at the
+end you can …" — not the names alone. If they do not pick, take level 2 for
+material in general and say so in one sentence. For an exam, take the level the
+exam asks for — recall-heavy exams rarely need more than 2, essay and oral exams
+usually need 3.
+
+**Per section.** One level for the session, but the user may lower or raise it
+for single sections in the plan ("section 5 only an overview"). Show the level
+next to each section.
+
+**Time against level.** If the time they have will not cover the plan at the
+chosen level, say so plainly with a rough estimate, and let them choose: fewer
+sections at that level, or all sections one level lower. Do not quietly do both
+halfway.
+
+**Holding to it.**
+
+- Stop at the target. Do not drag a level-1 section through boundary cases.
+- The user can change the level any time. Adjust without discussion.
+
+## Report card
+
+Issue it at the end — and also when the user stops early. It records what the
+user **showed** in this session, not what was talked about. Write it in the
+user's language, in this shape:
+
+```
+## Report card: <material>
+Target: level 2 (Working) · Reached: level 2 (5 of 6 sections tested)
+
+| Section | Target | Reached | Evidence | How solid |
+|---|---|---|---|---|
+| <section> | 2 | 2 | Connected the sampling choice to the bias in section 5 unprompted | independent |
+| <section> | 3 | 2 | Summary correct; missed the unstated assumption until pointed to it | with help |
+| <section> | 2 | – | Not covered | not tested |
+
+**Worked out yourself:** 1–3 points, phrased as what they did.
+**Still shaky:** each spot, with the passage to reread and the question that would test it.
+**Flagged list:** each flagged item — resolved at the end, or still open.
+**Next step:** one concrete thing — a section, a question, or the next level.
+```
+
+For exam prep, add one line: **If the exam were today:** which sections would
+likely cost points, and why. Honest, not reassuring.
+
+Rating rules:
+
+- **A level counts only once its exit test was passed.** Recall, agreement with
+  you, or a section merely being discussed does not count.
+- **How solid**: *independent* = passed at rung 0–2; *with help* = passed only
+  after rung 3–5 (including a transfer question after an explanation);
+  *not tested* = never put to an exit test.
+- *With help* still counts as reached in the table, but it always also appears
+  under **Still shaky**.
+- **The overall level is the lowest reached level among the tested sections.** No
+  averaging, no rounding up. The Reached line always says how many sections were
+  tested.
+- **Evidence** is one concrete line about what the user did. No adjectives, no
+  praise.
+- Table plus the short blocks, nothing else. No closing pep talk.
 
 ## Gotchas
 
@@ -105,3 +183,6 @@ coating; for exam prep an over-optimistic read is more damaging than a harsh one
 - **If the material contradicts your own knowledge**, say so openly and turn it
   into a question — but do not answer it for the user.
 - **For code**: ask about behaviour and intent, not line numbers.
+- **Do not inflate the report card.** A generous grade feels kind and is useless:
+  the user plans their next step on it. When in doubt, the lower level and
+  *with help*.
