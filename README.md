@@ -25,44 +25,80 @@ questions, and a running list of weak spots that gets re-asked at the end.
 Neither skill is meant for quick lookups, summaries, or debugging under time
 pressure — they say so and step aside.
 
+Each skill is self-contained, so either one works on its own.
+
 ## Installation
 
-### Claude Code (as a plugin)
+Works with Claude Code and Codex, as a plugin from a marketplace or as plain
+skills. Replace `<source>` with a local path to this repo or, once pushed,
+`<owner>/socratic-learning`.
+
+### As a plugin
+
+Claude Code:
 
 ```bash
-claude plugin marketplace add /path/to/socratic-learning
+claude plugin marketplace add <source>
 ```
 
 ```bash
 claude plugin install socratic-learning@socratic-learning
 ```
 
-Or from GitHub once pushed: `claude plugin marketplace add <owner>/socratic-learning`.
-
-### Claude Code (plain skills)
-
-Copy or symlink the skill folders into `~/.claude/skills/` (personal) or
-`.claude/skills/` (per project):
+Codex:
 
 ```bash
-cp -R skills/* ~/.claude/skills/
+codex plugin marketplace add <source>
 ```
+
+```bash
+codex plugin add socratic-learning@socratic-learning
+```
+
+### As plain skills (no plugin, no marketplace)
+
+```bash
+./install.sh
+```
+
+This copies both skills into `~/.claude/skills/` (Claude Code) and
+`~/.agents/skills/` (Codex). Options:
+
+| Command | Effect |
+|---|---|
+| `./install.sh claude` / `./install.sh codex` | Only one tool |
+| `./install.sh --project DIR` | Into `DIR/.claude/skills` and `DIR/.agents/skills` instead of your home |
+| `./install.sh --link` | Symlink instead of copy, so edits in this repo apply immediately |
+| `./install.sh --uninstall` | Remove them again |
+
+Without the script, copy each `skills/<name>/` folder into one of those
+directories yourself.
 
 ### Claude.ai
 
-Zip a single skill folder (e.g. `skills/socratic-concept/`) and upload it under
-Settings → Capabilities → Skills.
+```bash
+./install.sh zip
+```
+
+Builds one zip per skill in `dist/`. Upload them under Settings → Capabilities →
+Skills.
 
 ## Repository layout
 
 ```
 .claude-plugin/
-  plugin.json        plugin manifest
-  marketplace.json   lets this repo act as its own marketplace
+  plugin.json        Claude Code plugin manifest
+  marketplace.json   Claude Code marketplace (this repo is its own marketplace)
+.agents/plugins/
+  marketplace.json   Codex marketplace
+plugin.json          Portable plugin manifest, used by Codex
 skills/
   socratic-concept/SKILL.md
   socratic-source/SKILL.md
+install.sh           plain-skill install and zip packaging
 ```
+
+Keep `version` in `plugin.json` and `.claude-plugin/plugin.json` in sync.
 
 ## Adding a skill
 

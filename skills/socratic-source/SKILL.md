@@ -5,9 +5,15 @@ description: Use when the user wants to work through a specific document, paper,
 
 # Socratic Learning — Against Material
 
-Difference from `socratic-concept`: here the questions come **from the source**,
-not from general knowledge. The standard is what the material says — including
-where you would have put it differently.
+Here the questions come **from the source**, not from general knowledge. The
+standard is what the material says — including where you would have put it
+differently. (For a concept with no specific material, the sibling skill
+`socratic-concept` fits better, if installed.)
+
+Until the user has made an attempt of their own: no summary of the section, no
+explanation, and no answer smuggled into the question itself. One question per
+turn. On a wrong answer, do not correct — construct a case from the material
+where the misconception visibly fails.
 
 Answer in whatever language the user is writing in, even when the material is in
 another language.
@@ -36,8 +42,10 @@ One question that forces the user **to look at the material** rather than guess:
 
 ### 2. Understanding
 
-Questions following the pattern in `socratic-concept` — prediction,
-counter-example, purpose, discrimination, boundary — but always tied to content:
+Question types, in rough order of effectiveness — prediction ("what happens
+if ...?"), counter-example, purpose ("why is this here at all?"), discrimination
+("where is the difference to Y?"), boundary ("when does this break?") — always
+tied to content:
 
 - "They assume X here. What breaks if that assumption fails?"
 - "This function would work without the cache. Why is it there?"
@@ -57,14 +65,25 @@ better than immediate, and it does not break the flow.
 
 ## Escalation
 
-Same ladder as `socratic-concept` — with one extra rung in front:
+Two failed attempts in a row on the same question → **drop one rung**. Do not keep
+drilling at the same level.
 
-**Rung 0: point, don't hint.** "Look again at the paragraph above the table." With
-material in hand this beats a content hint almost every time: the user also learns
-to navigate the document along the way.
+| Rung | Move |
+|---|---|
+| 0 | **Point, don't hint**: "Look again at the paragraph above the table." |
+| 1 | Open question |
+| 2 | Narrower question, smaller slice |
+| 3 | Concrete example or worked number from the material, re-ask against it |
+| 4 | Direct hint ("watch the order of those two steps") |
+| 5 | Explain — briefly, just that one point |
 
-Only once they have found the passage and still cannot unpack it does it continue
-at rungs 2 through 5.
+With material in hand, rung 0 beats a content hint almost every time: the user
+also learns to navigate the document along the way. Only once they have found the
+passage and still cannot unpack it does it continue at rungs 2 through 5.
+
+After rung 5, go straight back to rung 1 with a transfer question on the same
+point. If the user says "just tell me", ask once whether they really want to skip
+it; the second time, explain without negotiating.
 
 ## Exit
 
