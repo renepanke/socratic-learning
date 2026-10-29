@@ -1,6 +1,6 @@
 ---
 name: socratic-source
-description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan with a chosen depth level, questions section by section, tracks what is still weak, and closes with a report card; spreads large material (a textbook, a course) over several sessions with a progress file. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
+description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan, checks what the user already knows before they pick a depth level, questions section by section, tracks what is still weak, and closes with a report card; spreads large material (a textbook, a course) over several sessions with a progress file. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
 ---
 
 # Socratic Learning — Against Material
@@ -28,10 +28,20 @@ another language.
    heading whose body you have not read.
 3. **Build a section plan** — 4 to 8 units, in dependency order, not necessarily
    document order. What builds on something else comes later.
-4. **Show the plan** and let the user pick the entry point. They know better than
-   you where it hurts. In the same turn, offer the depth levels (see **Depth
-   levels** below). For an exam topic, also ask how much time they have and what
-   the exam asks for — that decides the level.
+4. **Show the plan and ask what the user already knows.** Have they read it,
+   which sections feel familiar, what do they know about the subject anyway? Two
+   sentences is enough. No levels, no numbers, no scale here — the user does not
+   know them yet.
+5. **Check.** Ask one question, anchored in the material, on the section the user
+   called most familiar. If it holds, a second one on the next. No ladder, no
+   hints: a wrong answer simply moves the starting point back.
+6. **Target and entry point.** Tell the user in one or two plain sentences where
+   they stand, then offer the depth levels as described under **Depth levels**,
+   and let them pick a level and the entry point. They know better than you where
+   it hurts. For an exam topic, also ask how much time they have and what the
+   exam asks for — that decides the level.
+
+Never ask for a level before the user has seen what the levels mean.
 
 For code, additionally: identify the entry point, the data flow, and the place
 where the actual decision is made. Question that, not syntax.
@@ -113,8 +123,12 @@ the end, and that is exactly what its exit test checks — applied per section.
 | 3 | Deep | say why it holds, what it assumes, and where it breaks | Level 2 + correct handling of a case the material does not discuss |
 | 4 | Mastery | defend it, attack it, and teach it | Level 3 + holds it against the strongest counter-position, + finds and fixes a misreading you play as a learner |
 
-**Offering it.** One line per level, in the user's language, phrased as "at the
-end you can …" — not the names alone. If they do not pick, take level 2 for
+**Offering it.** Only after the current knowledge has been checked (Preparation,
+steps 4–5). One line per level, in the user's language, phrased as "at the end
+you can …" — not the names alone. Mark where the user stands now ("not yet level
+1" is a valid answer). Show this full list **every** time you ask for a target —
+in Large material and per section too. Never ask for a bare number like "1,
+level 3". If they do not pick, take level 2 for
 material in general and say so in one sentence. For an exam, take the level the
 exam asks for — recall-heavy exams rarely need more than 2, essay and oral exams
 usually need 3.
@@ -181,20 +195,28 @@ eight units, or the time the user has will not cover it at the chosen level. The
 the plan spans several sessions.
 
 1. **Look for a progress file** (see **Progress file**). If there is one, show
-   where things stand and go to step 4.
+   where things stand and go to step 5.
 2. **Map the whole, read the part.** Build the plan from the structure — table of
    contents, chapter introductions and summaries, module layout for code. Units
    are now chapters or modules, still in dependency order. "Read all of it" then
    applies per session: read the units of **this** session completely before
    questioning them.
-3. **Placement (optional).** If the user has already worked through part of the
-   material, let them rate those units 0–4 against the depth levels and ask one
-   check question each for the ones rated 2 or higher. A failed check sets the
-   unit one level lower. No teaching here.
-4. **Pick this session's units.** The user picks two or three units and the
-   levels. Suggest an order along the dependencies. Then run the normal
-   preparation and per-section flow on those units only.
-5. **End of session.** Report card for this session's units, then update the
+3. **Current knowledge.** Ask, in one message, how well the user knows each
+   unit — in plain words, not levels. Offer this scale and let them answer per
+   unit in free text:
+   - haven't read it, don't know the subject → 0
+   - skimmed it, know roughly what it says → claims level 1
+   - worked through it, could use it → claims level 2
+   - know why it holds and where it breaks → claims level 3
+4. **Check.** For each unit claimed at 2 or higher, ask one check question at
+   that level, anchored in the material, one per turn. A failed check sets the
+   unit one level lower. No ladder and no teaching here: this is placement.
+5. **Target.** Show the result per unit in plain words, then the depth levels as
+   described under **Depth levels**, and let the user pick two or three units
+   for this session and a level for each. Suggest an order along the
+   dependencies. Then run the per-section flow on those units only; the
+   preparation's knowledge and check steps are already covered by placement.
+6. **End of session.** Report card for this session's units, then update the
    progress file.
 
 Never question a unit from memory of an earlier session — read it again.

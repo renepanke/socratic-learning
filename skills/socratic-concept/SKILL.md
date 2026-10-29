@@ -1,6 +1,6 @@
 ---
 name: socratic-concept
-description: Use when the user wants to genuinely understand a concept, mechanism or idea rather than be told the answer — "explain X to me", "I want to understand X", "socratic", "quiz me on this". Drives understanding through questions, with a diagnosis and a chosen depth level first, an escalation ladder when stuck, an explicit exit test, and a closing report card; splits large topics ("Java programming") into areas tracked across sessions in a progress file. Do NOT use when the user just wants a fast factual answer, is debugging under time pressure, or asks for a summary.
+description: Use when the user wants to genuinely understand a concept, mechanism or idea rather than be told the answer — "explain X to me", "I want to understand X", "socratic", "quiz me on this". Drives understanding through questions, starting from what the user already knows (checked, not just claimed) and then a chosen depth level, an escalation ladder when stuck, an explicit exit test, and a closing report card; splits large topics ("Java programming") into areas tracked across sessions in a progress file. Do NOT use when the user just wants a fast factual answer, is debugging under time pressure, or asks for a summary.
 ---
 
 # Socratic Learning — Concepts
@@ -32,25 +32,42 @@ them artificially just makes the session drag.
 If the topic is too large for one session ("Java programming", "statistics"), or
 a progress file for it exists, go to **Large topics** first.
 
-### 1. Diagnosis (always first, exactly one turn)
+The start always runs in this order: what the user knows, a check of that, then
+the target. Never ask for a level before the user has seen what the levels mean.
+
+### 1. Current knowledge (always first, exactly one turn)
 
 Ask the user what they **think they already know** about the topic, explicitly
-including the shaky parts. Two sentences is enough from them. In the same turn,
-offer the depth levels (see **Depth levels** below) and let them pick one.
+including the shaky parts. Two sentences is enough from them. No levels, no
+numbers, no scale here — the user does not know them yet.
 
 Read that answer for three things:
 - Which part is solid?
 - Where is the edge — the first point where it goes vague?
 - Is there an actual **misconception**? That takes priority over everything else.
 
-The first real question starts at that edge, not at the textbook beginning. If the
+### 2. Check (one or two turns)
+
+Self-reports are often off, mostly upward. Ask one question at the point the user
+called solid. If it holds, ask a second one a little further, at the edge. This is
+not teaching yet: no ladder, no hints. A wrong answer simply moves the starting
+point back.
+
+### 3. Target
+
+Now tell the user in one or two plain sentences where they stand — in terms of
+what they can do, not a number ("you can say what an index is for, but not yet
+predict when the database uses it"). Then offer the depth levels as described
+under **Depth levels**, mark the one they are at now, and let them pick a target.
+
+The first real question starts at the edge, not at the textbook beginning. If the
 user is already at step four, do not start at step one.
 
 From here on, keep a running list of the 2–5 **parts** of the concept that come
 up, and for each one the highest level the user has shown and at which rung. The
 report card is built from this list.
 
-### 2. The question loop
+### 4. The question loop
 
 One question per turn. No lists of questions — the user will answer the easiest
 one and the rest evaporate.
@@ -70,7 +87,7 @@ add up.
 On a vague answer ("something to do with performance"), push instead of waving it
 through: "What exactly gets faster, and by what mechanism?"
 
-### 3. The escalation ladder
+### 5. The escalation ladder
 
 Two failed attempts in a row on the same question → **drop one rung**. Do not keep
 drilling at the same rung; that is the point where socratic questioning turns
@@ -91,7 +108,7 @@ trace.
 If the user says "just tell me", ask once whether they really want to skip the
 point. The second time, explain without negotiating. It is their learning time.
 
-### 4. The exit
+### 6. The exit
 
 Only finish when the exit test of the **target level** holds (see **Depth
 levels**). In every level that means at least: the user explains the core in
@@ -114,9 +131,12 @@ the end, and that is exactly what its exit test checks.
 | 3 | Deep | say why it works, where it breaks, and how it differs from its neighbours | Level 2 + correct handling of a new boundary case |
 | 4 | Mastery | teach it, critique it, and carry it into another domain | Level 3 + finds and fixes a misconception you play as a learner, + a transfer to an unrelated domain |
 
-**Offering it.** One line per level, in the user's language, phrased as "at the
-end you can …" — not the names alone, which mean nothing to them. If they do not
-pick, take level 3 and say so in one sentence. If a goal is obvious from context
+**Offering it.** Only after the current knowledge has been checked (Flow, steps
+1–2). One line per level, in the user's language, phrased as "at the end you can
+…" — not the names alone, which mean nothing to them. Mark where the user stands
+now ("not yet level 1" is a valid answer). Show this full list **every** time you
+ask for a target — in Large topics and per area too. Never ask for a bare number
+like "1, level 3". If they do not pick, take level 3 and say so in one sentence. If a goal is obvious from context
 ("for my exam on Friday", "just so I can follow the meeting"), suggest the
 matching level instead of asking blind.
 
@@ -135,7 +155,7 @@ else — the contract and the ladder stay the same at every level.
   same failure as explaining too early, in the other direction.
 - If the user reaches the target early, offer once, in one sentence: stop here
   with the report card, or one level up.
-- If the diagnosis already shows the target is met, say so and offer either the
+- If the check already shows the target is met, say so and offer either the
   next level or a check-only run that goes straight to the exit test.
 - The user can change the level any time ("go deeper", "that's enough"). Adjust
   without discussion.
@@ -184,22 +204,33 @@ each need their own exit test. "Java at level 3" cannot be tested; "generics at
 level 3" can. So do not start questioning — map it first.
 
 1. **Look for a progress file** (see **Progress file**). If there is one, show
-   where things stand and go to step 4.
+   where things stand and go to step 5.
 2. **Topic map.** Split the topic into 5–10 areas, each small enough for one or
    two sessions, in dependency order. Show it as a short list, one line per area,
    with what it depends on. The user may cut, merge or add areas — it is their
    map.
-3. **Placement.** The user rates each area 0–4 against the depth levels, all in
-   one go. For each area rated 2 or higher, ask one check question at that level,
-   one per turn — people overrate exactly these. A failed check sets the area one
-   level lower. No ladder and no teaching here: this is placement, not a session.
-   Keep it to a few minutes; with many high-rated areas, check the ones the
-   target areas depend on.
-4. **Pick and sequence.** The user picks the areas and a target level for each.
-   Suggest an order along the dependencies, starting with any weak area that
-   blocks a target. Then run the normal flow on **one** area, starting with the
-   diagnosis; that area's parts are the rows of its report card.
-5. **End of session.** Report card for the area as usual, then update the
+3. **Current knowledge.** Ask, in one message, how well the user knows each
+   area — in plain words, not levels. Offer this scale and let them answer per
+   area in free text:
+   - never heard of it → 0
+   - know roughly what it is → claims level 1
+   - have used it → claims level 2
+   - know why it works and where it breaks → claims level 3
+4. **Check.** For each area claimed at 2 or higher, ask one check question at
+   that level, one per turn — people overrate exactly these. A failed check sets
+   the area one level lower. No ladder and no teaching here: this is placement,
+   not a session. Keep it to a few minutes; with many such areas, check the ones
+   the others depend on.
+5. **Target.** Show the result per area in plain words, then the depth levels as
+   described under **Depth levels**, and let the user pick the areas and a target
+   level for each. Suggest a target per area if the goal is clear from context,
+   and an order along the dependencies, starting with any weak area that blocks a
+   target.
+6. **One area per session.** Run the normal flow on **one** area. Keep its steps
+   1–3 short: placement already answered most of them, so one sentence on what
+   is known and one check question at the edge are enough. That area's parts are
+   the rows of its report card.
+7. **End of session.** Report card for the area as usual, then update the
    progress file.
 
 One area done properly beats three touched. Do not cover several areas in one
