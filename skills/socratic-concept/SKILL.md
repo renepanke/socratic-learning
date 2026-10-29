@@ -32,14 +32,15 @@ them artificially just makes the session drag.
 If the topic is too large for one session ("Java programming", "statistics"), or
 a progress file for it exists, go to **Large topics** first.
 
-The start always runs in this order: where the user stands, a check of that, then
-the target — both asked on the same scale (see **Depth levels → The scale**).
+The start always runs in this order: where the user stands, a check of that,
+then the target — both asked on the same scale (see the scale in
+`references/levels.md`).
 
 ### 1. Current knowledge (always first, exactly one turn)
 
-Ask where the user stands, as described under **Asking where they stand**: the
-scale, a number, and two sentences on what they already know and where it gets
-shaky.
+Ask where the user stands, as described in `references/levels.md` (Asking where
+they stand): the scale, a number, and two sentences on what they already know
+and where it gets shaky.
 
 Read that answer for three things:
 - Which part is solid?
@@ -56,9 +57,9 @@ answer simply moves the level, and the starting point, back.
 ### 3. Target
 
 Tell the user in one or two plain sentences where they stand after the check —
-what they can do, plus the number ("you can say what an index is for, but not yet
-predict when the database uses it: 1"). Then ask for the target as described
-under **Asking for the target**.
+what they can do, plus the number ("you can say what an index is for, but not
+yet predict when the database uses it: 1"). Then ask for the target as described
+in `references/levels.md` (Asking for the target).
 
 The first real question starts at the edge, not at the textbook beginning. If the
 user is already at step four, do not start at step one.
@@ -116,8 +117,8 @@ levels**). In every level that means at least: the user explains the core in
 case they handle must be **new**, one you have not discussed. That is the real
 test: recall can be faked, transfer cannot.
 
-When it holds: issue the report card (see **Report card**), then stop — do not
-tack on another round out of politeness.
+When it holds: issue the report card (see `references/report-card.md`), then
+stop — do not tack on another round out of politeness.
 
 ## Depth levels
 
@@ -133,178 +134,23 @@ checks.
 | 3 | Deep | say why it works, where it breaks, and how it differs from its neighbours | Level 2 + correct handling of a new boundary case |
 | 4 | Mastery | teach it, critique it, and carry it into another domain | Level 3 + finds and fixes a misconception you play as a learner, + a transfer to an unrelated domain |
 
-**The scale.** Show it to the user as exactly this block, translated into their
-language. Same wording every time, so the numbers keep their meaning across
-questions and sessions:
-
-```
-0  New       – I know the name at most
-1  Overview  – I can say what it is and what it is for
-2  Working   – I can use it in ordinary cases
-3  Deep      – I know why it works and where it breaks
-4  Mastery   – I can teach it, critique it, carry it over
-```
-
-Ask for a number only with this block in the same message — never a bare "1,
-level 3".
-
-**Asking where they stand.** The block, then the question in one line. For a
-single topic, also ask for two sentences on what they know and where it gets
-shaky. For several areas, a table they fill in with numbers:
-
-```
-| # | Area | You now |
-|---|---|---|
-| 1 | <area> | ? |
-| 2 | <area> | ? |
-
-Answer with numbers, e.g. "1=2, 2=1, 3=0". Add a word wherever something is shaky.
-```
-
-**Asking for the target.** The block again, the level after the check, and a
-suggested target — so that agreeing takes one word:
-
-```
-| # | Area | Now (checked) | Suggested target |
-|---|---|---|---|
-| 1 | <area> | 1 | 3 |
-| 2 | <area> | 0 | 2 |
-
-Keep the suggestion, or give other numbers.
-```
-
-Base the suggestion on the goal if it is clear from context ("for my exam on
-Friday", "just so I can follow the meeting"); otherwise suggest 3. If the user
-does not answer it, the suggestion stands — say so in one sentence.
-
-**What it changes.** The level sets the question mix and the exit test, nothing
-else — the contract and the ladder stay the same at every level.
-
-- Level 1: mostly purpose and discrimination. No boundary cases.
-- Level 2: add prediction on ordinary cases.
-- Level 3: add counter-example and boundary.
-- Level 4: add critique, derivation ("how would you have invented this?") and
-  role reversal: you play a learner with a plausible misconception, they teach.
-
-**Holding to it.**
-
-- Stop at the target. Dragging a level-1 learner through boundary cases is the
-  same failure as explaining too early, in the other direction.
-- If the user reaches the target early, offer once, in one sentence: stop here
-  with the report card, or one level up.
-- If the check already shows the target is met, say so and offer either the
-  next level or a check-only run that goes straight to the exit test.
-- The user can change the level any time ("go deeper", "that's enough"). Adjust
-  without discussion.
+How to show the scale, how to ask where the user stands and for the target, and
+how the level shapes the session: **read `references/levels.md` before the first
+question.**
 
 ## Report card
 
-Issue it at the end — and also when the user stops early. It records what the
-user **showed** in this session, not what was talked about. Write it in the
-user's language, in this shape:
-
-```
-## Report card: <topic>
-Target: level 3 (Deep) · Reached: level 2 (Working)
-
-| Part | Target | Reached | Evidence | How solid |
-|---|---|---|---|---|
-| <part> | 3 | 3 | Derived the cost of a range query unprompted | independent |
-| <part> | 3 | 2 | Correct explanation; boundary case only after a direct hint | with help |
-| <part> | 3 | – | Not covered | not tested |
-
-**Worked out yourself:** 1–3 points, phrased as what they did.
-**Still shaky:** each spot, with the question that would test it next time.
-**Next step:** one concrete thing — a question to try, or the next level.
-```
-
-Rating rules:
-
-- **A level counts only once its exit test was passed.** Recall, agreement with
-  you, or a topic merely being discussed does not count.
-- **How solid**: *independent* = passed at rung 1–2; *with help* = passed only
-  after rung 3–5 (including a transfer question after an explanation);
-  *not tested* = never put to an exit test.
-- *With help* still counts as reached in the table, but it always also appears
-  under **Still shaky**.
-- **The overall level is the lowest reached level among the tested parts.** No
-  averaging, no rounding up. If untested parts belong to the core, say so on the
-  Reached line ("level 2, 3 of 4 parts tested").
-- **Evidence** is one concrete line about what the user did. No adjectives, no
-  praise.
-- Table plus the three short blocks, nothing else. No closing pep talk.
+Issue it at the end — and also when the user stops early. **Read
+`references/report-card.md` before writing it** for the format and the rating
+rules. The core of it: only what the user showed in this session counts, the
+overall level is the lowest tested one, and when in doubt, rate lower.
 
 ## Large topics
 
-A topic is too large for one session when it has more than about five parts that
-each need their own exit test. "Java at level 3" cannot be tested; "generics at
-level 3" can. So do not start questioning — map it first.
-
-1. **Look for a progress file** (see **Progress file**). If there is one, show
-   where things stand and go to step 5.
-2. **Topic map.** Split the topic into 5–10 areas, each small enough for one or
-   two sessions, in dependency order. The user may cut, merge or add areas — it
-   is their map.
-3. **Current knowledge.** In the same message as the map: ask where they stand
-   per area, as described under **Asking where they stand** — the scale, then
-   the map itself as the table, with a "Depends on" column added.
-4. **Check.** For each area claimed at 2 or higher, ask one check question at
-   that level, one per turn — people overrate exactly these. A failed check sets
-   the area one level lower. No ladder and no teaching here: this is placement,
-   not a session. Keep it to a few minutes; with many such areas, check the ones
-   the others depend on.
-5. **Target.** Ask for the target per area as described under **Asking for the
-   target**. A target of 0 means "skip this area". Then suggest which area to
-   start with, along the dependencies — first any weak area that blocks a
-   target.
-6. **One area per session.** Run the normal flow on **one** area. Keep its steps
-   1–3 short: placement already answered most of them, so one sentence on what
-   is known and one check question at the edge are enough. That area's parts are
-   the rows of its report card.
-7. **End of session.** Report card for the area as usual, then update the
-   progress file.
-
-One area done properly beats three touched. Do not cover several areas in one
-session to get through the map faster.
-
-## Progress file
-
-Large topics span several sessions. The progress file carries the state between
-them, in the user's language.
-
-**Where.** With file access (Claude Code, Codex): `learning/<topic>.md` in the
-current working directory, with the topic as a short kebab-case name. Read it at
-the start, update it at the end, and tell the user the path once when you create
-it. Without file access (Claude.ai): output the same content as a block at the
-end of the session and ask the user to paste it in next time.
-
-```
-# Progress: <topic>
-Updated: <date>
-
-| Area | Depends on | Target | Reached | How solid | Last session |
-|---|---|---|---|---|---|
-| <area> | <areas> | 3 | 2 | with help | <date> |
-| <area> | <areas> | 1 | 1 | placement | – |
-| <area> | <areas> | 2 | – | not tested | – |
-
-## Still shaky
-- <area>: <spot> — <question that would test it>
-
-## Next
-<the area and level suggested for the next session, and why>
-```
-
-Rules:
-
-- **Placement** results are entered with How solid *placement*. They count until
-  a real session confirms or corrects them.
-- **Update only from what was shown**, by the report card's rating rules. Never
-  raise a level from placement or from the user's say-so alone.
-- **On resume**, open with one check question on the most recent shaky spot in
-  the file, before anything new. Delayed repetition is the point.
-- **The file is the user's.** If they edited it, take their edits as the current
-  state.
+When the subject is too large for one session, or a progress file for it exists
+in `learning/`: **read `references/large-topics.md` and follow it before
+anything else.** It covers splitting into areas, placement, one area per
+session, and the progress file that carries the state between sessions.
 
 ## Gotchas
 

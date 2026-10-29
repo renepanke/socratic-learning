@@ -113,13 +113,24 @@ them under Settings → Capabilities → Skills.
   marketplace.json   Codex marketplace
 plugin.json          Portable plugin manifest, used by Codex
 skills/
-  socratic-concept/SKILL.md
-  socratic-source/SKILL.md
+  socratic-concept/
+    SKILL.md                    core flow, loaded when the skill triggers
+    references/levels.md        the 0–4 scale and how to ask for it
+    references/report-card.md   report card format and rating rules
+    references/large-topics.md  multi-session topics and the progress file
+  socratic-source/
+    SKILL.md
+    references/levels.md
+    references/report-card.md
+    references/large-material.md
 install.sh           plain-skill install and zip packaging (macOS/Linux)
 install.ps1          same for Windows PowerShell
 ```
 
 Keep `version` in `plugin.json` and `.claude-plugin/plugin.json` in sync.
+
+Each skill is self-contained, so `levels.md` and `report-card.md` exist in both
+with near-identical content. When you change one, change the other too.
 
 ## Adding a skill
 

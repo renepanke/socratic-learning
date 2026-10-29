@@ -28,19 +28,22 @@ another language.
    heading whose body you have not read.
 3. **Build a section plan** — 4 to 8 units, in dependency order, not necessarily
    document order. What builds on something else comes later.
-4. **Show the plan and ask where the user stands**, as described under **Asking
-   where they stand**: the scale, then the plan itself as the table.
+4. **Show the plan and ask where the user stands**, as described in
+   `references/levels.md` (Asking where they stand): the scale, then the plan
+   itself as the table.
 5. **Check.** Ask one question, anchored in the material, at the level the user
    named for the section they rated highest. If it holds, a second one on the
    next. No ladder, no hints: a wrong answer simply moves that section's level
    back.
-6. **Target and entry point.** Ask for the target as described under **Asking
-   for the target**, and for the entry point — they know better than you where
-   it hurts. For an exam topic, also ask how much time they have and what the
-   exam asks for; that decides the suggested target.
+6. **Target and entry point.** Ask for the target as described in
+   `references/levels.md` (Asking for the target), and for the entry point —
+   they know better than you where it hurts. For an exam topic, also ask how
+   much time they have and what the exam asks for; that decides the suggested
+   target.
 
 Where the user stands and where they want to get are asked on the same scale
-(see **Depth levels → The scale**), in this order: where they stand, check, target.
+(see the scale in `references/levels.md`), in this order: where they stand,
+check, target.
 
 For code, additionally: identify the entry point, the data flow, and the place
 where the actual decision is made. Question that, not syntax.
@@ -107,8 +110,8 @@ Per section: move on when the section passes the exit test of its target level
 words; from level 2 up, also a question that connects two sections.
 
 For the session overall: work through the flagged list, then issue the report
-card (see **Report card**). No sugar coating; for exam prep an over-optimistic
-read is more damaging than a harsh one.
+card (see `references/report-card.md`). No sugar coating; for exam prep an
+over-optimistic read is more damaging than a harsh one.
 
 ## Depth levels
 
@@ -124,175 +127,23 @@ checks — applied per section.
 | 3 | Deep | say why it holds, what it assumes, and where it breaks | Level 2 + correct handling of a case the material does not discuss |
 | 4 | Mastery | defend it, attack it, and teach it | Level 3 + holds it against the strongest counter-position, + finds and fixes a misreading you play as a learner |
 
-**The scale.** Show it to the user as exactly this block, translated into their
-language. Same wording every time, so the numbers keep their meaning across
-questions and sessions:
-
-```
-0  New       – haven't read it, don't know the subject
-1  Overview  – I know roughly what it says and why it is there
-2  Working   – I can use it and connect it to the rest
-3  Deep      – I know why it holds, what it assumes, where it breaks
-4  Mastery   – I can defend it, attack it, and teach it
-```
-
-Ask for a number only with this block in the same message — never a bare "1,
-level 3".
-
-**Asking where they stand.** The block, then the plan as a table they fill in
-with numbers:
-
-```
-| # | Section | You now |
-|---|---|---|
-| 1 | <section> | ? |
-| 2 | <section> | ? |
-
-Answer with numbers, e.g. "1=2, 2=1, 3=0". Add a word wherever something is shaky.
-```
-
-**Asking for the target.** The block again, the level after the check, and a
-suggested target — so that agreeing takes one word:
-
-```
-| # | Section | Now (checked) | Suggested target |
-|---|---|---|---|
-| 1 | <section> | 1 | 2 |
-| 2 | <section> | 0 | 2 |
-
-Keep the suggestion, or give other numbers.
-```
-
-Suggest 2 for material in general. For an exam, suggest what the exam asks for —
-recall-heavy exams rarely need more than 2, essay and oral exams usually need 3.
-A target of 0 means "skip this section". If the user does not answer it, the
-suggestion stands — say so in one sentence.
-
-**Per section.** One level for the session, but the user may lower or raise it
-for single sections in the plan ("section 5 only an overview"). Show the level
-next to each section.
-
-**Time against level.** If the time they have will not cover the plan at the
-chosen level, say so plainly with a rough estimate, and let them choose: fewer
-sections at that level, or all sections one level lower. Do not quietly do both
-halfway.
-
-**Holding to it.**
-
-- Stop at the target. Do not drag a level-1 section through boundary cases.
-- The user can change the level any time. Adjust without discussion.
+How to show the scale, how to ask where the user stands and for the target, and
+how the level shapes the session: **read `references/levels.md` before the first
+question.**
 
 ## Report card
 
-Issue it at the end — and also when the user stops early. It records what the
-user **showed** in this session, not what was talked about. Write it in the
-user's language, in this shape:
-
-```
-## Report card: <material>
-Target: level 2 (Working) · Reached: level 2 (5 of 6 sections tested)
-
-| Section | Target | Reached | Evidence | How solid |
-|---|---|---|---|---|
-| <section> | 2 | 2 | Connected the sampling choice to the bias in section 5 unprompted | independent |
-| <section> | 3 | 2 | Summary correct; missed the unstated assumption until pointed to it | with help |
-| <section> | 2 | – | Not covered | not tested |
-
-**Worked out yourself:** 1–3 points, phrased as what they did.
-**Still shaky:** each spot, with the passage to reread and the question that would test it.
-**Flagged list:** each flagged item — resolved at the end, or still open.
-**Next step:** one concrete thing — a section, a question, or the next level.
-```
-
-For exam prep, add one line: **If the exam were today:** which sections would
-likely cost points, and why. Honest, not reassuring.
-
-Rating rules:
-
-- **A level counts only once its exit test was passed.** Recall, agreement with
-  you, or a section merely being discussed does not count.
-- **How solid**: *independent* = passed at rung 0–2; *with help* = passed only
-  after rung 3–5 (including a transfer question after an explanation);
-  *not tested* = never put to an exit test.
-- *With help* still counts as reached in the table, but it always also appears
-  under **Still shaky**.
-- **The overall level is the lowest reached level among the tested sections.** No
-  averaging, no rounding up. The Reached line always says how many sections were
-  tested.
-- **Evidence** is one concrete line about what the user did. No adjectives, no
-  praise.
-- Table plus the short blocks, nothing else. No closing pep talk.
+Issue it at the end — and also when the user stops early. **Read
+`references/report-card.md` before writing it** for the format and the rating
+rules. The core of it: only what the user showed in this session counts, the
+overall level is the lowest tested one, and when in doubt, rate lower.
 
 ## Large material
 
-Material is too large for one session when the plan would need more than about
-eight units, or the time the user has will not cover it at the chosen level. Then
-the plan spans several sessions.
-
-1. **Look for a progress file** (see **Progress file**). If there is one, show
-   where things stand and go to step 5.
-2. **Map the whole, read the part.** Build the plan from the structure — table of
-   contents, chapter introductions and summaries, module layout for code. Units
-   are now chapters or modules, still in dependency order. "Read all of it" then
-   applies per session: read the units of **this** session completely before
-   questioning them.
-3. **Current knowledge.** In the same message as the plan: ask where they stand
-   per unit, as described under **Asking where they stand** — the scale, then the
-   plan itself as the table, with a "Depends on" column added.
-4. **Check.** For each unit claimed at 2 or higher, ask one check question at
-   that level, anchored in the material, one per turn. A failed check sets the
-   unit one level lower. No ladder and no teaching here: this is placement.
-5. **Target.** Ask for the target per unit as described under **Asking for the
-   target**, and suggest two or three units for this session, along the
-   dependencies. Then run the per-section flow on those units only; the
-   preparation's knowledge and check steps are already covered by placement.
-6. **End of session.** Report card for this session's units, then update the
-   progress file.
-
-Never question a unit from memory of an earlier session — read it again.
-
-## Progress file
-
-Large material spans several sessions. The progress file carries the state
-between them, in the user's language.
-
-**Where.** With file access (Claude Code, Codex): `learning/<material>.md` in the
-current working directory, with the material as a short kebab-case name. Read it
-at the start, update it at the end, and tell the user the path once when you
-create it. Without file access (Claude.ai): output the same content as a block at
-the end of the session and ask the user to paste it in next time.
-
-```
-# Progress: <material>
-Material: <path, URL or title, so it can be loaded again>
-Updated: <date>
-
-| Unit | Depends on | Target | Reached | How solid | Last session |
-|---|---|---|---|---|---|
-| <unit> | <units> | 3 | 2 | with help | <date> |
-| <unit> | <units> | 2 | 2 | placement | – |
-| <unit> | <units> | 2 | – | not tested | – |
-
-## Still shaky
-- <unit>: <spot> — <passage to reread> — <question that would test it>
-
-## Open flagged items
-- <item from the flagged list that was still open at the end of a session>
-
-## Next
-<the units and level suggested for the next session, and why>
-```
-
-Rules:
-
-- **Placement** results are entered with How solid *placement*. They count until
-  a real session confirms or corrects them.
-- **Update only from what was shown**, by the report card's rating rules. Never
-  raise a level from placement or from the user's say-so alone.
-- **On resume**, open with one check question on the most recent shaky spot or
-  open flagged item, before anything new. Delayed repetition is the point.
-- **The file is the user's.** If they edited it, take their edits as the current
-  state.
+When the subject is too large for one session, or a progress file for it exists
+in `learning/`: **read `references/large-material.md` and follow it before
+anything else.** It covers splitting into units, placement, one unit per
+session, and the progress file that carries the state between sessions.
 
 ## Gotchas
 
