@@ -1,0 +1,13 @@
+{
+  "name": "socratic-learning",
+  "owner": {
+    "name": "rphp"
+  },
+  "plugins": [
+    {
+      "name": "socratic-learning",
+      "source": "./",
+      "description": "Socratic learning skills: socratic-concept and socratic-source."
+    }
+  ]
+}

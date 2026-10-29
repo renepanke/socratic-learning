@@ -1,0 +1,6 @@
+{
+  "name": "socratic-learning",
+  "version": "0.1.0",
+  "description": "Learn by being questioned instead of being told: socratic sessions for concepts and for specific material (papers, docs, codebases, exam topics).",
+  "keywords": ["learning", "socratic", "tutoring", "study", "exam-prep"]
+}
