@@ -1,6 +1,6 @@
 ---
 name: socratic-source
-description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan with a chosen depth level, questions section by section, tracks what is still weak, and closes with a report card. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
+description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan with a chosen depth level, questions section by section, tracks what is still weak, and closes with a report card; spreads large material (a textbook, a course) over several sessions with a progress file. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
 ---
 
 # Socratic Learning — Against Material
@@ -21,7 +21,9 @@ another language.
 ## Preparation (before the first question)
 
 1. **Get the material.** File, path, URL or repo. If none is present, ask for it
-   and do not start from memory.
+   and do not start from memory. If a progress file for it exists, or the
+   material is too large for one session (a textbook, a course, a large
+   codebase), go to **Large material** first.
 2. **Read all of it.** In sections if it is long, but completely. Never question a
    heading whose body you have not read.
 3. **Build a section plan** — 4 to 8 units, in dependency order, not necessarily
@@ -171,6 +173,74 @@ Rating rules:
 - **Evidence** is one concrete line about what the user did. No adjectives, no
   praise.
 - Table plus the short blocks, nothing else. No closing pep talk.
+
+## Large material
+
+Material is too large for one session when the plan would need more than about
+eight units, or the time the user has will not cover it at the chosen level. Then
+the plan spans several sessions.
+
+1. **Look for a progress file** (see **Progress file**). If there is one, show
+   where things stand and go to step 4.
+2. **Map the whole, read the part.** Build the plan from the structure — table of
+   contents, chapter introductions and summaries, module layout for code. Units
+   are now chapters or modules, still in dependency order. "Read all of it" then
+   applies per session: read the units of **this** session completely before
+   questioning them.
+3. **Placement (optional).** If the user has already worked through part of the
+   material, let them rate those units 0–4 against the depth levels and ask one
+   check question each for the ones rated 2 or higher. A failed check sets the
+   unit one level lower. No teaching here.
+4. **Pick this session's units.** The user picks two or three units and the
+   levels. Suggest an order along the dependencies. Then run the normal
+   preparation and per-section flow on those units only.
+5. **End of session.** Report card for this session's units, then update the
+   progress file.
+
+Never question a unit from memory of an earlier session — read it again.
+
+## Progress file
+
+Large material spans several sessions. The progress file carries the state
+between them, in the user's language.
+
+**Where.** With file access (Claude Code, Codex): `learning/<material>.md` in the
+current working directory, with the material as a short kebab-case name. Read it
+at the start, update it at the end, and tell the user the path once when you
+create it. Without file access (Claude.ai): output the same content as a block at
+the end of the session and ask the user to paste it in next time.
+
+```
+# Progress: <material>
+Material: <path, URL or title, so it can be loaded again>
+Updated: <date>
+
+| Unit | Depends on | Target | Reached | How solid | Last session |
+|---|---|---|---|---|---|
+| <unit> | <units> | 3 | 2 | with help | <date> |
+| <unit> | <units> | 2 | 2 | placement | – |
+| <unit> | <units> | 2 | – | not tested | – |
+
+## Still shaky
+- <unit>: <spot> — <passage to reread> — <question that would test it>
+
+## Open flagged items
+- <item from the flagged list that was still open at the end of a session>
+
+## Next
+<the units and level suggested for the next session, and why>
+```
+
+Rules:
+
+- **Placement** results are entered with How solid *placement*. They count until
+  a real session confirms or corrects them.
+- **Update only from what was shown**, by the report card's rating rules. Never
+  raise a level from placement or from the user's say-so alone.
+- **On resume**, open with one check question on the most recent shaky spot or
+  open flagged item, before anything new. Delayed repetition is the point.
+- **The file is the user's.** If they edited it, take their edits as the current
+  state.
 
 ## Gotchas
 

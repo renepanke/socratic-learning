@@ -25,6 +25,11 @@ Both share the same core:
 - **Report card** — at the end, or whenever you stop: per part or section, the
   level reached, the evidence for it, and whether it was independent or only
   with help. Only what you showed counts.
+- **Large topics** — "Java programming" or a whole textbook is a curriculum, not a
+  session. It gets split into areas (or chapters), with a short placement, a
+  target level per area, and one area per session. Progress is kept in
+  `learning/<topic>.md` in your working directory; on Claude.ai, without file
+  access, you get the progress block to paste into the next session.
 
 `socratic-source` adds a section plan, an extra "point, don't hint" rung, critique
 questions, and a running list of weak spots that gets re-asked at the end.
