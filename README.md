@@ -6,14 +6,14 @@ transfer question at the end, not by a feeling of having understood.
 
 ## Skills
 
-| Skill | Use it for | Questions come from |
-|---|---|---|
-| [`socratic-concept`](skills/socratic-concept/SKILL.md) | Understanding a concept, mechanism or idea ("I want to understand X") | General knowledge |
-| [`socratic-source`](skills/socratic-source/SKILL.md) | Working through a specific paper, document, codebase or exam topic ("quiz me on this paper") | The material you provide |
-| [`socratic-practice`](skills/socratic-practice/SKILL.md) | Learning by doing: a small exercise you solve yourself, run for real ("give me an exercise") | An exercise card and a check |
-| [`socratic-debug`](skills/socratic-debug/SKILL.md) | Practicing bug hunting: observe, hypothesise, test, fix ("give me broken code") | A broken scenario with a real symptom |
-| [`socratic-exam`](skills/socratic-exam/SKILL.md) | An exam simulation with no hints, graded honestly afterwards ("mock exam") | The exam's scope and format |
-| [`socratic-review`](skills/socratic-review/SKILL.md) | 5 to 15 minutes of repetition on the weak spots that are due ("what is due?") | Your progress files |
+| Skill                                                    | Use it for                                                                                   | Questions come from                   |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------|
+| [`socratic-concept`](skills/socratic-concept/SKILL.md)   | Understanding a concept, mechanism or idea ("I want to understand X")                        | General knowledge                     |
+| [`socratic-source`](skills/socratic-source/SKILL.md)     | Working through a specific paper, document, codebase or exam topic ("quiz me on this paper") | The material you provide              |
+| [`socratic-practice`](skills/socratic-practice/SKILL.md) | Learning by doing: a small exercise you solve yourself, run for real ("give me an exercise") | An exercise card and a check          |
+| [`socratic-debug`](skills/socratic-debug/SKILL.md)       | Practicing bug hunting: observe, hypothesise, test, fix ("give me broken code")              | A broken scenario with a real symptom |
+| [`socratic-exam`](skills/socratic-exam/SKILL.md)         | An exam simulation with no hints, graded honestly afterwards ("mock exam")                   | The exam's scope and format           |
+| [`socratic-review`](skills/socratic-review/SKILL.md)     | 5 to 15 minutes of repetition on the weak spots that are due ("what is due?")                | Your progress files                   |
 
 The two learning skills, `socratic-concept` and `socratic-source`, share this core:
 
@@ -168,13 +168,6 @@ python3 tools/sync_shared.py
 
 `python3 tools/sync_shared.py --check` exits with an error if a copy is missing
 or differs. Run it before you commit.
-
-## Adding a skill
-
-Create `skills/<name>/SKILL.md` with `name` and `description` frontmatter. The
-description decides when the skill triggers — include both the trigger phrases
-and the explicit "Do NOT use when" cases. Add `agents/openai.yaml` for Codex, and
-run `tools/sync_shared.py` so the new skill gets the shared files.
 
 ## Credits
 
