@@ -1,0 +1,4 @@
+interface:
+  display_name: "Socratic Debug"
+  short_description: "Practice finding and fixing realistic bugs"
+  default_prompt: "Use $socratic-debug to give me a broken <topic> scenario to debug myself."

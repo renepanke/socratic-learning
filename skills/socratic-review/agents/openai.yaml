@@ -1,0 +1,4 @@
+interface:
+  display_name: "Socratic Review"
+  short_description: "Repeat the weak spots that are due"
+  default_prompt: "Use $socratic-review to review the spots that are due in my learning files."

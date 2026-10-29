@@ -1,0 +1,4 @@
+interface:
+  display_name: "Socratic Exam"
+  short_description: "Simulate an exam and get an honest grade"
+  default_prompt: "Use $socratic-exam to simulate my exam on <topic> under real conditions."

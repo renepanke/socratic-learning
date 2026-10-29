@@ -1,3 +1,4 @@
+# Shared file. Edit shared/scripts/ste-lint.py and run tools/sync_shared.py.
 # ste-lint.py: linter for ASD-STE100 style rules, unchanged from
 # https://github.com/1fc0nfig/ste-writing (scripts/ste-lint.py).
 #

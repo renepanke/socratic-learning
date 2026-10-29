@@ -1,0 +1,4 @@
+interface:
+  display_name: "Socratic Concept"
+  short_description: "Understand a concept by being questioned"
+  default_prompt: "Use $socratic-concept to help me really understand <topic> by asking me questions instead of explaining."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Socratic Practice"
+  short_description: "Learn by doing with real, runnable exercises"
+  default_prompt: "Use $socratic-practice to give me a hands-on exercise on <topic> that I solve myself."

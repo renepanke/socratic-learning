@@ -10,8 +10,12 @@ transfer question at the end, not by a feeling of having understood.
 |---|---|---|
 | [`socratic-concept`](skills/socratic-concept/SKILL.md) | Understanding a concept, mechanism or idea ("I want to understand X") | General knowledge |
 | [`socratic-source`](skills/socratic-source/SKILL.md) | Working through a specific paper, document, codebase or exam topic ("quiz me on this paper") | The material you provide |
+| [`socratic-practice`](skills/socratic-practice/SKILL.md) | Learning by doing: a small exercise you solve yourself, run for real ("give me an exercise") | An exercise card and a check |
+| [`socratic-debug`](skills/socratic-debug/SKILL.md) | Practicing bug hunting: observe, hypothesise, test, fix ("give me broken code") | A broken scenario with a real symptom |
+| [`socratic-exam`](skills/socratic-exam/SKILL.md) | An exam simulation with no hints, graded honestly afterwards ("mock exam") | The exam's scope and format |
+| [`socratic-review`](skills/socratic-review/SKILL.md) | 5 to 15 minutes of repetition on the weak spots that are due ("what is due?") | Your progress files |
 
-Both share the same core:
+The two learning skills, `socratic-concept` and `socratic-source`, share this core:
 
 - **Diagnosis first** — start where your understanding goes vague, not at page one.
 - **One question per turn** — prediction, counter-example, purpose, discrimination, boundary.
@@ -38,6 +42,9 @@ Both share the same core:
   follow a light form of Simplified Technical English: short sentences,
   active voice, one name per thing, no filler. A bundled linter checks the
   English report card and progress file.
+- **Real output** — where an example can be run safely (a shell, the tool
+  installed, local only, in `learning/sandbox/`), the skills run it and show the
+  real output. Otherwise they label it as expected output.
 
 `socratic-source` adds a section plan, an extra "point, don't hint" rung, critique
 questions, and a running list of weak spots that gets re-asked at the end.
@@ -45,7 +52,17 @@ questions, and a running list of weak spots that gets re-asked at the end.
 Neither skill is meant for quick lookups, summaries, or debugging under time
 pressure — they say so and step aside.
 
-Each skill is self-contained, so either one works on its own.
+All six skills also share:
+
+- **One scale and one progress file format**, so `socratic-review` and
+  `socratic-exam` can pick up what the others leave in `learning/`.
+- **Due dates for weak spots** — they come back after 1, 3, 7, 14 and 30 days,
+  and drop back to 1 day when they fail again.
+- **A learner profile** in `learning/profile.md` — preferences you state once
+  ("always with real code", "answer in German") are saved and applied in every
+  session.
+
+Each skill is self-contained, so any one of them works on its own.
 
 ## Installation
 
@@ -120,40 +137,49 @@ them under Settings → Capabilities → Skills.
 .agents/plugins/
   marketplace.json   Codex marketplace
 plugin.json          Portable plugin manifest, used by Codex
+shared/                         source of the files every skill carries
+  references/scale.md           the 0–4 scale and how to ask for it
+  references/report-card.md     report card format and rating rules
+  references/progress-file.md   progress file format and due dates
+  references/profile.md         learner profile
+  references/running-code.md    when and how to run examples
+  references/writing.md         writing style rules and self-check
+  scripts/ste-lint.py           style linter (from ste-writing, MIT)
 skills/
-  socratic-concept/
+  socratic-<name>/
     SKILL.md                    core flow, loaded when the skill triggers
-    references/levels.md        the 0–4 scale and how to ask for it
-    references/report-card.md   report card format and rating rules
-    references/large-topics.md  multi-session topics and the progress file
-    references/writing.md       writing style rules and self-check
-    scripts/ste-lint.py         style linter (from ste-writing, MIT)
-  socratic-source/
-    SKILL.md
-    references/levels.md
-    references/report-card.md
-    references/large-material.md
-    references/writing.md
-    scripts/ste-lint.py
+    agents/openai.yaml          display name and default prompt for Codex
+    references/                 the shared files, plus the skill's own
+                                (levels.md, large-topics.md, large-material.md)
+    scripts/ste-lint.py         copy of the shared linter
+tools/sync_shared.py  copies shared/ into every skill
 install.sh           plain-skill install and zip packaging (macOS/Linux)
 install.ps1          same for Windows PowerShell
 ```
 
 Keep `version` in `plugin.json` and `.claude-plugin/plugin.json` in sync.
 
-Each skill is self-contained, so `levels.md`, `report-card.md`, `writing.md`
-and `ste-lint.py` exist in both with near-identical content. When you change one, change the other too.
+Each skill is self-contained, so every skill carries its own copy of the files in
+`shared/`. Edit them only in `shared/`, then copy them into the skills:
+
+```bash
+python3 tools/sync_shared.py
+```
+
+`python3 tools/sync_shared.py --check` exits with an error if a copy is missing
+or differs. Run it before you commit.
 
 ## Adding a skill
 
 Create `skills/<name>/SKILL.md` with `name` and `description` frontmatter. The
 description decides when the skill triggers — include both the trigger phrases
-and the explicit "Do NOT use when" cases.
+and the explicit "Do NOT use when" cases. Add `agents/openai.yaml` for Codex, and
+run `tools/sync_shared.py` so the new skill gets the shared files.
 
 ## Credits
 
-The writing rules in `references/writing.md` are adapted from
+The writing rules in `shared/references/writing.md` are adapted from
 [ste-writing](https://github.com/1fc0nfig/ste-writing) by Ege Çelebi and Matyas
-Cerny (MIT). `scripts/ste-lint.py` is copied unchanged from that repository,
+Cerny (MIT). `shared/scripts/ste-lint.py` is copied unchanged from that repository,
 with its license notice at the top of the file. ASD-STE100 is a specification of
 ASD. This project is not affiliated with ASD.

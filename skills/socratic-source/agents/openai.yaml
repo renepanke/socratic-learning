@@ -1,0 +1,4 @@
+interface:
+  display_name: "Socratic Source"
+  short_description: "Work through a paper, doc or codebase by questions"
+  default_prompt: "Use $socratic-source to go through <file, paper or repo> with me section by section."

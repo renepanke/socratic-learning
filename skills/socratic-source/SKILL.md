@@ -18,6 +18,10 @@ case from the material where the misconception visibly fails.
 Answer in whatever language the user is writing in, even when the material is in
 another language.
 
+If `learning/profile.md` exists, read it first and apply it (see
+`references/profile.md`). When the user states a preference about how they
+learn, save it there.
+
 ## Show, then ask
 
 Questions about words alone train talking about the material, not using it. Put
@@ -37,6 +41,9 @@ excerpt, a code snippet, a table, a figure's numbers. The question is then about
 - **No answer inside the example**: no added comment that explains the point.
 - **After the attempt, close the loop** with the real result: the passage that
   settles it, the actual output, the corrected code.
+- **Run code when you can.** If a snippet from the material can be run safely,
+  run it and show the real output; otherwise label the output as expected.
+  When and how: read `references/running-code.md` before the first run.
 
 ## Message format
 
@@ -84,20 +91,20 @@ It has the rules and a self-check to run before you send.
 3. **Build a section plan** — 4 to 8 units, in dependency order, not necessarily
    document order. What builds on something else comes later.
 4. **Show the plan and ask where the user stands**, as described in
-   `references/levels.md` (Asking where they stand): the scale, then the plan
+   `references/scale.md` (Asking where they stand): the scale, then the plan
    itself as the table.
 5. **Check.** Ask one question, anchored in the material, at the level the user
    named for the section they rated highest. If it holds, a second one on the
    next. No ladder, no hints: a wrong answer simply moves that section's level
    back.
 6. **Target and entry point.** Ask for the target as described in
-   `references/levels.md` (Asking for the target), and for the entry point —
+   `references/scale.md` (Asking for the target), and for the entry point —
    they know better than you where it hurts. For an exam topic, also ask how
    much time they have and what the exam asks for; that decides the suggested
    target.
 
 Where the user stands and where they want to get are asked on the same scale
-(see the scale in `references/levels.md`), in this order: where they stand,
+(see `references/scale.md`), in this order: where they stand,
 check, target.
 
 For code, additionally: identify the entry point, the data flow, and the place
@@ -183,9 +190,9 @@ checks — applied per section.
 | 3 | Deep | say why it holds, what it assumes, and where it breaks | Level 2 + correct handling of a case the material does not discuss |
 | 4 | Mastery | defend it, attack it, and teach it | Level 3 + holds it against the strongest counter-position, + finds and fixes a misreading you play as a learner |
 
-How to show the scale, how to ask where the user stands and for the target, and
-how the level shapes the session: **read `references/levels.md` before the first
-question.**
+**Before the first question, read `references/scale.md`** (how to show the
+scale and how to ask) **and `references/levels.md`** (how the level shapes the
+session).
 
 ## Report card
 

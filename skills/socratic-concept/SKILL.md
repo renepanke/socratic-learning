@@ -10,6 +10,10 @@ having heard it. The difference is measurable and tested below.
 
 Answer in whatever language the user is writing in.
 
+If `learning/profile.md` exists, read it first and apply it (see
+`references/profile.md`). When the user states a preference about how they
+learn, save it there.
+
 ## The contract
 
 Until the user has made an attempt of their own, the following all count as
@@ -63,6 +67,9 @@ Rules for the example:
 - **After the attempt, close the loop**: show the real result — the plan output,
   the error message, the corrected code — as the feedback. Seeing the real output
   after a guess is where most of the learning sticks.
+- **Run it when you can.** If the example can be run safely, run it and show the
+  real output; otherwise label the output as expected. When and how: read
+  `references/running-code.md` before the first run.
 
 ## Message format
 
@@ -124,12 +131,11 @@ If the topic is too large for one session ("Java programming", "statistics"), or
 a progress file for it exists, go to **Large topics** first.
 
 The start always runs in this order: where the user stands, a check of that,
-then the target — both asked on the same scale (see the scale in
-`references/levels.md`).
+then the target — both asked on the same scale (see `references/scale.md`).
 
 ### 1. Current knowledge (always first, exactly one turn)
 
-Ask where the user stands, as described in `references/levels.md` (Asking where
+Ask where the user stands, as described in `references/scale.md` (Asking where
 they stand): the scale, a number, and two sentences on what they already know
 and where it gets shaky.
 
@@ -150,7 +156,7 @@ answer simply moves the level, and the starting point, back.
 Tell the user in one or two plain sentences where they stand after the check —
 what they can do, plus the number ("you can say what an index is for, but not
 yet predict when the database uses it: 1"). Then ask for the target as described
-in `references/levels.md` (Asking for the target).
+in `references/scale.md` (Asking for the target).
 
 The first real question starts at the edge, not at the textbook beginning. If the
 user is already at step four, do not start at step one.
@@ -230,9 +236,9 @@ checks.
 For practical topics, "use it" means code: from level 2 up, the exit test includes
 writing or changing a few lines, not only talking about them.
 
-How to show the scale, how to ask where the user stands and for the target, and
-how the level shapes the session: **read `references/levels.md` before the first
-question.**
+**Before the first question, read `references/scale.md`** (how to show the
+scale and how to ask) **and `references/levels.md`** (how the level shapes the
+session).
 
 ## Report card
 

@@ -1,51 +1,12 @@
-# Depth levels — scale, asking, applying
+# Depth levels — applying them
 
-The level table with the exit tests is in `SKILL.md`. This file covers how to
-show the scale, how to ask, and how the level shapes the session.
+The level table with the exit tests is in `SKILL.md`. How to show the scale and
+how to ask where the user stands and for the target is in `references/scale.md`
+(use the block for a topic). This file covers the suggestion and how the level
+shapes the session.
 
-**The scale.** Show it to the user as exactly this block, translated into their
-language. Same wording every time, so the numbers keep their meaning across
-questions and sessions:
-
-```
-0  New: I know the name at most
-1  Overview: I can say what it is and what it is for
-2  Working: I can use it in ordinary cases
-3  Deep: I know why it works and where it breaks
-4  Mastery: I can teach it, critique it, carry it over
-```
-
-Ask for a number only with this block in the same message — never a bare "1,
-level 3".
-
-**Asking where they stand.** The block, then the question in one line. For a
-single topic, also ask for two sentences on what they know and where it gets
-shaky. For several areas, a table they fill in with numbers:
-
-```
-| # | Area | You now |
-|---|---|---|
-| 1 | <area> | ? |
-| 2 | <area> | ? |
-
-Answer with numbers, e.g. "1=2, 2=1, 3=0". Add a word wherever something is shaky.
-```
-
-**Asking for the target.** The block again, the level after the check, and a
-suggested target — so that agreeing takes one word:
-
-```
-| # | Area | Now (checked) | Suggested target |
-|---|---|---|---|
-| 1 | <area> | 1 | 3 |
-| 2 | <area> | 0 | 2 |
-
-Keep the suggestion, or give other numbers.
-```
-
-Base the suggestion on the goal if it is clear from context ("for my exam on
-Friday", "just so I can follow the meeting"); otherwise suggest 3. If the user
-does not answer it, the suggestion stands — say so in one sentence.
+**Suggesting a target.** Base it on the goal if it is clear from context ("for my
+exam on Friday", "just so I can follow the meeting"); otherwise suggest 3.
 
 **What it changes.** The level sets the question mix and the exit test, nothing
 else — the contract and the ladder stay the same at every level.

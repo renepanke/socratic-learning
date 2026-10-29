@@ -1,3 +1,4 @@
+<!-- Shared file. Edit shared/references/writing.md and run tools/sync_shared.py. -->
 # Writing style
 
 Every message to the user follows a light form of ASD-STE100 Simplified
