@@ -27,6 +27,37 @@ Exception: bare facts the user cannot derive (dates, names, syntax, conventions)
 State those immediately and plainly — there is nothing to work out, and quizzing
 them artificially just makes the session drag.
 
+## Message format
+
+Every turn has the same short shape:
+
+1. **Feedback** on the last answer — one sentence at most, no praise ("That holds
+   for this case." / "The two steps are in the wrong order."). When a level has
+   just been reached, say so in a few words ("Workflow: level 2 reached.").
+   Otherwise no level talk mid-session — no "the remaining test for level 3 is …".
+2. **A blank line, then the question**, standing on its own. A lead-in like "In
+   your own words:" is fine; a paragraph around it is not.
+
+One question per turn. When a question genuinely has parts — mostly the exit
+test, which asks for the whole picture — list them instead of packing them into
+one sentence:
+
+```
+In your own words:
+
+1. How does Terraform use
+   1. the configuration
+   2. the provider
+   3. state
+   4. the plan
+2. When is a change an in-place update, and when a replacement?
+   1. What do `replace_triggered_by` and `create_before_destroy` change about that?
+```
+
+At most three top-level points, each a short question; sub-points only name what
+the answer has to cover. If it needs more, split it over several turns. Code,
+commands and file names go in backticks.
+
 ## Flow
 
 If the topic is too large for one session ("Java programming", "statistics"), or
@@ -70,8 +101,9 @@ report card is built from this list.
 
 ### 4. The question loop
 
-One question per turn. No lists of questions — the user will answer the easiest
-one and the rest evaporate.
+One question per turn. No lists of separate questions — the user will answer the
+easiest one and the rest evaporate. (Parts of one question are different; see
+**Message format**.)
 
 Good questions, in rough order of effectiveness:
 

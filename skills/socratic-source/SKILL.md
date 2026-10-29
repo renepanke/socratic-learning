@@ -12,11 +12,39 @@ differently. (For a concept with no specific material, the sibling skill
 
 Until the user has made an attempt of their own: no summary of the section, no
 explanation, and no answer smuggled into the question itself. One question per
-turn. On a wrong answer, do not correct — construct a case from the material
-where the misconception visibly fails.
+turn (see **Message format**). On a wrong answer, do not correct — construct a
+case from the material where the misconception visibly fails.
 
 Answer in whatever language the user is writing in, even when the material is in
 another language.
+
+## Message format
+
+Every turn has the same short shape:
+
+1. **Feedback** on the last answer — one sentence at most, no praise ("That is
+   what section 3 says." / "The table shows the opposite."). When a level has
+   just been reached, say so in a few words ("Section 2: level 2 reached.").
+   Otherwise no level talk mid-session — no "the remaining test for level 3 is …".
+2. **A blank line, then the question**, standing on its own. A lead-in like "In
+   your own words:" is fine; a paragraph around it is not.
+
+One question per turn. When a question genuinely has parts — mostly a section's
+exit test, which asks for the whole picture — list them instead of packing them
+into one sentence:
+
+```
+In your own words, for section 4:
+
+1. What do the authors claim, and what is their evidence?
+   1. the experiment
+   2. the comparison with the baseline
+2. Which assumption from section 2 does this rest on?
+```
+
+At most three top-level points, each a short question; sub-points only name what
+the answer has to cover. If it needs more, split it over several turns. Code,
+commands and file names go in backticks.
 
 ## Preparation (before the first question)
 
