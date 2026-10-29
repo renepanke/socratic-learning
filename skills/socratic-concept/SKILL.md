@@ -32,14 +32,14 @@ them artificially just makes the session drag.
 If the topic is too large for one session ("Java programming", "statistics"), or
 a progress file for it exists, go to **Large topics** first.
 
-The start always runs in this order: what the user knows, a check of that, then
-the target. Never ask for a level before the user has seen what the levels mean.
+The start always runs in this order: where the user stands, a check of that, then
+the target — both asked on the same scale (see **Depth levels → The scale**).
 
 ### 1. Current knowledge (always first, exactly one turn)
 
-Ask the user what they **think they already know** about the topic, explicitly
-including the shaky parts. Two sentences is enough from them. No levels, no
-numbers, no scale here — the user does not know them yet.
+Ask where the user stands, as described under **Asking where they stand**: the
+scale, a number, and two sentences on what they already know and where it gets
+shaky.
 
 Read that answer for three things:
 - Which part is solid?
@@ -48,17 +48,17 @@ Read that answer for three things:
 
 ### 2. Check (one or two turns)
 
-Self-reports are often off, mostly upward. Ask one question at the point the user
-called solid. If it holds, ask a second one a little further, at the edge. This is
-not teaching yet: no ladder, no hints. A wrong answer simply moves the starting
-point back.
+Self-reports are often off, mostly upward. Ask one question at the level the user
+named, at the point they called solid. If it holds, ask a second one a little
+further, at the edge. This is not teaching yet: no ladder, no hints. A wrong
+answer simply moves the level, and the starting point, back.
 
 ### 3. Target
 
-Now tell the user in one or two plain sentences where they stand — in terms of
-what they can do, not a number ("you can say what an index is for, but not yet
-predict when the database uses it"). Then offer the depth levels as described
-under **Depth levels**, mark the one they are at now, and let them pick a target.
+Tell the user in one or two plain sentences where they stand after the check —
+what they can do, plus the number ("you can say what an index is for, but not yet
+predict when the database uses it: 1"). Then ask for the target as described
+under **Asking for the target**.
 
 The first real question starts at the edge, not at the textbook beginning. If the
 user is already at step four, do not start at step one.
@@ -121,24 +121,61 @@ tack on another round out of politeness.
 
 ## Depth levels
 
-The user picks how deep to go. Each level is defined by what they can **do** at
-the end, and that is exactly what its exit test checks.
+One scale, 0–4, for both where the user stands and where they want to get. Each
+level is defined by what they can **do**, and that is exactly what its exit test
+checks.
 
 | Level | Name | At the end you can … | Exit test |
 |---|---|---|---|
+| 0 | New | (starting point only) at most recognise the name | – |
 | 1 | Overview | say in your own words what it is and what it is for | Own-words explanation of the core |
 | 2 | Working | use it on ordinary cases and predict what happens | Level 1 + correct prediction on a new ordinary case |
 | 3 | Deep | say why it works, where it breaks, and how it differs from its neighbours | Level 2 + correct handling of a new boundary case |
 | 4 | Mastery | teach it, critique it, and carry it into another domain | Level 3 + finds and fixes a misconception you play as a learner, + a transfer to an unrelated domain |
 
-**Offering it.** Only after the current knowledge has been checked (Flow, steps
-1–2). One line per level, in the user's language, phrased as "at the end you can
-…" — not the names alone, which mean nothing to them. Mark where the user stands
-now ("not yet level 1" is a valid answer). Show this full list **every** time you
-ask for a target — in Large topics and per area too. Never ask for a bare number
-like "1, level 3". If they do not pick, take level 3 and say so in one sentence. If a goal is obvious from context
-("for my exam on Friday", "just so I can follow the meeting"), suggest the
-matching level instead of asking blind.
+**The scale.** Show it to the user as exactly this block, translated into their
+language. Same wording every time, so the numbers keep their meaning across
+questions and sessions:
+
+```
+0  New       – I know the name at most
+1  Overview  – I can say what it is and what it is for
+2  Working   – I can use it in ordinary cases
+3  Deep      – I know why it works and where it breaks
+4  Mastery   – I can teach it, critique it, carry it over
+```
+
+Ask for a number only with this block in the same message — never a bare "1,
+level 3".
+
+**Asking where they stand.** The block, then the question in one line. For a
+single topic, also ask for two sentences on what they know and where it gets
+shaky. For several areas, a table they fill in with numbers:
+
+```
+| # | Area | You now |
+|---|---|---|
+| 1 | <area> | ? |
+| 2 | <area> | ? |
+
+Answer with numbers, e.g. "1=2, 2=1, 3=0". Add a word wherever something is shaky.
+```
+
+**Asking for the target.** The block again, the level after the check, and a
+suggested target — so that agreeing takes one word:
+
+```
+| # | Area | Now (checked) | Suggested target |
+|---|---|---|---|
+| 1 | <area> | 1 | 3 |
+| 2 | <area> | 0 | 2 |
+
+Keep the suggestion, or give other numbers.
+```
+
+Base the suggestion on the goal if it is clear from context ("for my exam on
+Friday", "just so I can follow the meeting"); otherwise suggest 3. If the user
+does not answer it, the suggestion stands — say so in one sentence.
 
 **What it changes.** The level sets the question mix and the exit test, nothing
 else — the contract and the ladder stay the same at every level.
@@ -206,25 +243,19 @@ level 3" can. So do not start questioning — map it first.
 1. **Look for a progress file** (see **Progress file**). If there is one, show
    where things stand and go to step 5.
 2. **Topic map.** Split the topic into 5–10 areas, each small enough for one or
-   two sessions, in dependency order. Show it as a short list, one line per area,
-   with what it depends on. The user may cut, merge or add areas — it is their
-   map.
-3. **Current knowledge.** Ask, in one message, how well the user knows each
-   area — in plain words, not levels. Offer this scale and let them answer per
-   area in free text:
-   - never heard of it → 0
-   - know roughly what it is → claims level 1
-   - have used it → claims level 2
-   - know why it works and where it breaks → claims level 3
+   two sessions, in dependency order. The user may cut, merge or add areas — it
+   is their map.
+3. **Current knowledge.** In the same message as the map: ask where they stand
+   per area, as described under **Asking where they stand** — the scale, then
+   the map itself as the table, with a "Depends on" column added.
 4. **Check.** For each area claimed at 2 or higher, ask one check question at
    that level, one per turn — people overrate exactly these. A failed check sets
    the area one level lower. No ladder and no teaching here: this is placement,
    not a session. Keep it to a few minutes; with many such areas, check the ones
    the others depend on.
-5. **Target.** Show the result per area in plain words, then the depth levels as
-   described under **Depth levels**, and let the user pick the areas and a target
-   level for each. Suggest a target per area if the goal is clear from context,
-   and an order along the dependencies, starting with any weak area that blocks a
+5. **Target.** Ask for the target per area as described under **Asking for the
+   target**. A target of 0 means "skip this area". Then suggest which area to
+   start with, along the dependencies — first any weak area that blocks a
    target.
 6. **One area per session.** Run the normal flow on **one** area. Keep its steps
    1–3 short: placement already answered most of them, so one sentence on what

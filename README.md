@@ -17,9 +17,9 @@ Both share the same core:
 - **One question per turn** — prediction, counter-example, purpose, discrimination, boundary.
 - **Escalation ladder** — two failed attempts drop one rung, down to a short
   explanation, followed immediately by a transfer question.
-- **Depth levels** — you pick how far to go: 1 Overview, 2 Working, 3 Deep,
-  4 Mastery. Each level is defined by what you can do at the end, and that is
-  its exit test.
+- **Depth levels** — one scale, 0 New to 4 Mastery, for where you stand and where
+  you want to get. You place yourself, a question or two checks it, then you pick
+  a target. Each level is defined by what you can do, and that is its exit test.
 - **Explicit exit** — your own words, plus whatever the chosen level demands (a
   new case, a boundary case, teaching it back).
 - **Report card** — at the end, or whenever you stop: per part or section, the

@@ -28,20 +28,19 @@ another language.
    heading whose body you have not read.
 3. **Build a section plan** — 4 to 8 units, in dependency order, not necessarily
    document order. What builds on something else comes later.
-4. **Show the plan and ask what the user already knows.** Have they read it,
-   which sections feel familiar, what do they know about the subject anyway? Two
-   sentences is enough. No levels, no numbers, no scale here — the user does not
-   know them yet.
-5. **Check.** Ask one question, anchored in the material, on the section the user
-   called most familiar. If it holds, a second one on the next. No ladder, no
-   hints: a wrong answer simply moves the starting point back.
-6. **Target and entry point.** Tell the user in one or two plain sentences where
-   they stand, then offer the depth levels as described under **Depth levels**,
-   and let them pick a level and the entry point. They know better than you where
+4. **Show the plan and ask where the user stands**, as described under **Asking
+   where they stand**: the scale, then the plan itself as the table.
+5. **Check.** Ask one question, anchored in the material, at the level the user
+   named for the section they rated highest. If it holds, a second one on the
+   next. No ladder, no hints: a wrong answer simply moves that section's level
+   back.
+6. **Target and entry point.** Ask for the target as described under **Asking
+   for the target**, and for the entry point — they know better than you where
    it hurts. For an exam topic, also ask how much time they have and what the
-   exam asks for — that decides the level.
+   exam asks for; that decides the suggested target.
 
-Never ask for a level before the user has seen what the levels mean.
+Where the user stands and where they want to get are asked on the same scale
+(see **Depth levels → The scale**), in this order: where they stand, check, target.
 
 For code, additionally: identify the entry point, the data flow, and the place
 where the actual decision is made. Question that, not syntax.
@@ -113,25 +112,61 @@ read is more damaging than a harsh one.
 
 ## Depth levels
 
-The user picks how deep to go. Each level is defined by what they can **do** at
-the end, and that is exactly what its exit test checks — applied per section.
+One scale, 0–4, for both where the user stands and where they want to get. Each
+level is defined by what they can **do**, and that is exactly what its exit test
+checks — applied per section.
 
 | Level | Name | At the end you can … | Exit test per section |
 |---|---|---|---|
+| 0 | New | (starting point only) not read it, subject unknown | – |
 | 1 | Overview | say what the section claims or does, and why it is there | Own-words summary |
 | 2 | Working | use it and connect it to the rest of the material | Level 1 + a question connecting two sections |
 | 3 | Deep | say why it holds, what it assumes, and where it breaks | Level 2 + correct handling of a case the material does not discuss |
 | 4 | Mastery | defend it, attack it, and teach it | Level 3 + holds it against the strongest counter-position, + finds and fixes a misreading you play as a learner |
 
-**Offering it.** Only after the current knowledge has been checked (Preparation,
-steps 4–5). One line per level, in the user's language, phrased as "at the end
-you can …" — not the names alone. Mark where the user stands now ("not yet level
-1" is a valid answer). Show this full list **every** time you ask for a target —
-in Large material and per section too. Never ask for a bare number like "1,
-level 3". If they do not pick, take level 2 for
-material in general and say so in one sentence. For an exam, take the level the
-exam asks for — recall-heavy exams rarely need more than 2, essay and oral exams
-usually need 3.
+**The scale.** Show it to the user as exactly this block, translated into their
+language. Same wording every time, so the numbers keep their meaning across
+questions and sessions:
+
+```
+0  New       – haven't read it, don't know the subject
+1  Overview  – I know roughly what it says and why it is there
+2  Working   – I can use it and connect it to the rest
+3  Deep      – I know why it holds, what it assumes, where it breaks
+4  Mastery   – I can defend it, attack it, and teach it
+```
+
+Ask for a number only with this block in the same message — never a bare "1,
+level 3".
+
+**Asking where they stand.** The block, then the plan as a table they fill in
+with numbers:
+
+```
+| # | Section | You now |
+|---|---|---|
+| 1 | <section> | ? |
+| 2 | <section> | ? |
+
+Answer with numbers, e.g. "1=2, 2=1, 3=0". Add a word wherever something is shaky.
+```
+
+**Asking for the target.** The block again, the level after the check, and a
+suggested target — so that agreeing takes one word:
+
+```
+| # | Section | Now (checked) | Suggested target |
+|---|---|---|---|
+| 1 | <section> | 1 | 2 |
+| 2 | <section> | 0 | 2 |
+
+Keep the suggestion, or give other numbers.
+```
+
+Suggest 2 for material in general. For an exam, suggest what the exam asks for —
+recall-heavy exams rarely need more than 2, essay and oral exams usually need 3.
+A target of 0 means "skip this section". If the user does not answer it, the
+suggestion stands — say so in one sentence.
 
 **Per section.** One level for the session, but the user may lower or raise it
 for single sections in the plan ("section 5 only an overview"). Show the level
@@ -201,19 +236,14 @@ the plan spans several sessions.
    are now chapters or modules, still in dependency order. "Read all of it" then
    applies per session: read the units of **this** session completely before
    questioning them.
-3. **Current knowledge.** Ask, in one message, how well the user knows each
-   unit — in plain words, not levels. Offer this scale and let them answer per
-   unit in free text:
-   - haven't read it, don't know the subject → 0
-   - skimmed it, know roughly what it says → claims level 1
-   - worked through it, could use it → claims level 2
-   - know why it holds and where it breaks → claims level 3
+3. **Current knowledge.** In the same message as the plan: ask where they stand
+   per unit, as described under **Asking where they stand** — the scale, then the
+   plan itself as the table, with a "Depends on" column added.
 4. **Check.** For each unit claimed at 2 or higher, ask one check question at
    that level, anchored in the material, one per turn. A failed check sets the
    unit one level lower. No ladder and no teaching here: this is placement.
-5. **Target.** Show the result per unit in plain words, then the depth levels as
-   described under **Depth levels**, and let the user pick two or three units
-   for this session and a level for each. Suggest an order along the
+5. **Target.** Ask for the target per unit as described under **Asking for the
+   target**, and suggest two or three units for this session, along the
    dependencies. Then run the per-section flow on those units only; the
    preparation's knowledge and check steps are already covered by placement.
 6. **End of session.** Report card for this session's units, then update the
