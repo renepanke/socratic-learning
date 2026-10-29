@@ -1,6 +1,6 @@
 ---
 name: socratic-source
-description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan, checks what the user already knows before they pick a depth level, questions section by section, tracks what is still weak, and closes with a report card; spreads large material (a textbook, a course) over several sessions with a progress file. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
+description: Use when the user wants to work through a specific document, paper, codebase or exam topic by being questioned on it rather than given a summary — "go through this with me", "quiz me on this paper", "I need to understand this for". Reads the material, builds a section plan, checks what the user already knows before they pick a depth level, questions section by section on excerpts and code from it, tracks what is still weak, and closes with a report card; spreads large material (a textbook, a course) over several sessions with a progress file. Do NOT use when the user wants a summary, an extraction, or a quick lookup from the document.
 ---
 
 # Socratic Learning — Against Material
@@ -18,6 +18,26 @@ case from the material where the misconception visibly fails.
 Answer in whatever language the user is writing in, even when the material is in
 another language.
 
+## Show, then ask
+
+Questions about words alone train talking about the material, not using it. Put
+something concrete in front of the user as often as the material allows: a short
+excerpt, a code snippet, a table, a figure's numbers. The question is then about
+**that**.
+
+- **From the material first**: show the lines in question, with the location
+  ("`src/cache.py`, `get()`", "table 2"). Keep excerpts short, at most about 15
+  lines; for longer passages, point to them instead of quoting.
+- **Build your own when the material stops**: for level 3 cases that the material
+  does not discuss, write a small example in the same style — a changed input,
+  a second call, an edge case — and ask what the material's logic does with it.
+- **Code material**: ask the user to predict, read, spot a mistake, or change a
+  few lines. From level 2 up, at least one exit question per code section is a
+  write or change question.
+- **No answer inside the example**: no added comment that explains the point.
+- **After the attempt, close the loop** with the real result: the passage that
+  settles it, the actual output, the corrected code.
+
 ## Message format
 
 Every turn has the same short shape:
@@ -26,7 +46,10 @@ Every turn has the same short shape:
    what section 3 says." / "The table shows the opposite."). When a level has
    just been reached, say so in a few words ("Section 2: level 2 reached.").
    Otherwise no level talk mid-session — no "the remaining test for level 3 is …".
-2. **A blank line, then the question**, standing on its own. A lead-in like "In
+   After an attempt on an example, the feedback may include the real result.
+2. **The example**, if there is one: a short excerpt, code block or table, with
+   its location in the material.
+3. **A blank line, then the question**, standing on its own. A lead-in like "In
    your own words:" is fine; a paragraph around it is not.
 
 One question per turn. When a question genuinely has parts — mostly a section's
@@ -88,7 +111,8 @@ rung. The report card is built from this.
 ### 1. Anchor
 
 One question that forces the user **to look at the material** rather than guess:
-"What reason do they give in section 3 for discarding the second approach?"
+"What reason do they give in section 3 for discarding the second approach?" For
+code, show the lines and ask about them (see **Show, then ask**).
 
 ### 2. Understanding
 
@@ -125,7 +149,7 @@ drilling at the same rung.
 | 2 | Narrower question, smaller slice |
 | 3 | Concrete example or worked number from the material, re-ask against it |
 | 4 | Direct hint ("watch the order of those two steps") |
-| 5 | Explain — briefly, just that one point |
+| 5 | Explain — briefly, just that one point, with a minimal example |
 
 With material in hand, rung 0 beats a content hint almost every time: the user
 also learns to navigate the document along the way. Only once they have found the
@@ -187,7 +211,8 @@ session, and the progress file that carries the state between sessions.
   reproduce long passages.
 - **If the material contradicts your own knowledge**, say so openly and turn it
   into a question — but do not answer it for the user.
-- **For code**: ask about behaviour and intent, not line numbers.
+- **For code**: ask about behaviour and intent, not line numbers — and show the
+  code you ask about instead of describing it in words.
 - **Do not inflate the report card.** A generous grade feels kind and is useless:
   the user plans their next step on it. When in doubt, the lower level and
   *with help*.

@@ -15,6 +15,10 @@ Both share the same core:
 
 - **Diagnosis first** — start where your understanding goes vague, not at page one.
 - **One question per turn** — prediction, counter-example, purpose, discrimination, boundary.
+- **Show, then ask** — questions come with something concrete to work on: code,
+  command output, a config diff, data. You predict, read, spot or write, then
+  see the real result. For practical topics, exit tests from level 2 up
+  include writing code.
 - **Escalation ladder** — two failed attempts drop one rung, down to a short
   explanation, followed immediately by a transfer question.
 - **Depth levels** — one scale, 0 New to 4 Mastery, for where you stand and where
