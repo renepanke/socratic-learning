@@ -57,21 +57,29 @@ codex plugin add socratic-learning@socratic-learning
 
 ### As plain skills (no plugin, no marketplace)
 
+macOS / Linux (also Git Bash or WSL on Windows):
+
 ```bash
 ./install.sh
 ```
 
-This copies both skills into `~/.claude/skills/` (Claude Code) and
+Windows (PowerShell):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+Both copy the skills into `~/.claude/skills/` (Claude Code) and
 `~/.agents/skills/` (Codex). Options:
 
-| Command | Effect |
-|---|---|
-| `./install.sh claude` / `./install.sh codex` | Only one tool |
-| `./install.sh --project DIR` | Into `DIR/.claude/skills` and `DIR/.agents/skills` instead of your home |
-| `./install.sh --link` | Symlink instead of copy, so edits in this repo apply immediately |
-| `./install.sh --uninstall` | Remove them again |
+| macOS / Linux | Windows | Effect |
+|---|---|---|
+| `./install.sh claude` / `codex` | `.\install.ps1 claude` / `codex` | Only one tool |
+| `--project DIR` | `-Project DIR` | Into `DIR/.claude/skills` and `DIR/.agents/skills` instead of your home |
+| `--link` | `-Link` | Link instead of copy, so edits in this repo apply immediately (Windows falls back to a junction without Developer Mode) |
+| `--uninstall` | `-Uninstall` | Remove them again |
 
-Without the script, copy each `skills/<name>/` folder into one of those
+Without a script, copy each `skills/<name>/` folder into one of those
 directories yourself.
 
 ### Claude.ai
@@ -80,8 +88,8 @@ directories yourself.
 ./install.sh zip
 ```
 
-Builds one zip per skill in `dist/`. Upload them under Settings → Capabilities →
-Skills.
+On Windows: `.\install.ps1 zip`. Builds one zip per skill in `dist/`. Upload
+them under Settings → Capabilities → Skills.
 
 ## Repository layout
 
@@ -95,7 +103,8 @@ plugin.json          Portable plugin manifest, used by Codex
 skills/
   socratic-concept/SKILL.md
   socratic-source/SKILL.md
-install.sh           plain-skill install and zip packaging
+install.sh           plain-skill install and zip packaging (macOS/Linux)
+install.ps1          same for Windows PowerShell
 ```
 
 Keep `version` in `plugin.json` and `.claude-plugin/plugin.json` in sync.

@@ -8,6 +8,8 @@
 #   claude  ~/.claude/skills   (with --project: DIR/.claude/skills)
 #   codex   ~/.agents/skills   (with --project: DIR/.agents/skills)
 #   all     both (default)
+#
+# macOS, Linux and Git Bash/WSL. On Windows PowerShell use install.ps1.
 set -euo pipefail
 
 repo="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -18,7 +20,7 @@ project=""
 link=0
 uninstall=0
 
-usage() { sed -n '2,10p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit "${1:-0}"; }
+usage() { sed -n '2,12p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; exit "${1:-0}"; }
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -38,7 +40,14 @@ if [ "$target" = zip ]; then
   for dir in "$skills_src"/*/; do
     name="$(basename "$dir")"
     rm -f "$repo/dist/$name.zip"
-    (cd "$skills_src" && zip -qr "$repo/dist/$name.zip" "$name" -x '*.DS_Store')
+    if command -v zip >/dev/null 2>&1; then
+      (cd "$skills_src" && zip -qr "$repo/dist/$name.zip" "$name" -x '*.DS_Store')
+    elif command -v python3 >/dev/null 2>&1; then
+      # Many minimal Linux installs have no zip binary.
+      (cd "$skills_src" && python3 -I -m zipfile -c "$repo/dist/$name.zip" "$name")
+    else
+      echo "need zip or python3 to build archives" >&2; exit 1
+    fi
     echo "built dist/$name.zip"
   done
   exit 0
