@@ -66,77 +66,70 @@ Each skill is self-contained, so any one of them works on its own.
 
 ## Installation
 
-Works with Claude Code and Codex, as a plugin from a marketplace or as plain
-skills. Replace `<source>` with a local path to this repo or, once pushed,
-`<owner>/socratic-learning`.
+Each skill is a plain folder with a `SKILL.md`. Installing means putting the
+folders from `skills/` where your agent looks for skills:
 
-### As a plugin
+| Agent | Folder |
+|---|---|
+| Claude Code | `~/.claude/skills/` |
+| Codex | `~/.agents/skills/` |
 
-Claude Code:
+### With the skills CLI
 
-```bash
-claude plugin marketplace add <source>
-```
-
-```bash
-claude plugin install socratic-learning@socratic-learning
-```
-
-Codex:
+Like [mattpocock/skills](https://github.com/mattpocock/skills), via the
+[skills.sh](https://skills.sh) CLI. It asks which agents and skills you want:
 
 ```bash
-codex plugin marketplace add <source>
+npx skills@latest add renepanke/socratic-learning
 ```
+
+All skills, for Claude Code and Codex, without questions:
 
 ```bash
-codex plugin add socratic-learning@socratic-learning
+npx skills@latest add renepanke/socratic-learning -g -a claude-code -a codex -s '*' -y
 ```
 
-### As plain skills (no plugin, no marketplace)
+Update with `npx skills@latest update`, remove with `npx skills@latest remove`.
+Needs Node.js. The CLI records an install event for skills.sh.
 
-macOS / Linux (also Git Bash or WSL on Windows):
+### With a one-liner (no Node.js)
+
+Downloads the repository and unpacks `skills/` into the Claude Code and Codex
+folders. Run it again to update.
+
+macOS / Linux:
 
 ```bash
-./install.sh
+for d in ~/.claude/skills ~/.agents/skills; do mkdir -p "$d" && curl -fsSL https://github.com/renepanke/socratic-learning/archive/refs/heads/main.tar.gz | tar -xz -C "$d" --strip-components=2 socratic-learning-main/skills; done
 ```
 
-Windows (PowerShell):
+Windows (PowerShell, Windows 10 or later):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\install.ps1
+curl.exe -fsSLo "$env:TEMP\socratic.tgz" https://github.com/renepanke/socratic-learning/archive/refs/heads/main.tar.gz; foreach ($d in "$HOME\.claude\skills", "$HOME\.agents\skills") { New-Item -ItemType Directory -Force $d | Out-Null; tar -xzf "$env:TEMP\socratic.tgz" -C $d --strip-components=2 socratic-learning-main/skills }
 ```
 
-Both copy the skills into `~/.claude/skills/` (Claude Code) and
-`~/.agents/skills/` (Codex). Options:
+Only one agent? Leave the other folder out of the list.
 
-| macOS / Linux | Windows | Effect |
-|---|---|---|
-| `./install.sh claude` / `codex` | `.\install.ps1 claude` / `codex` | Only one tool |
-| `--project DIR` | `-Project DIR` | Into `DIR/.claude/skills` and `DIR/.agents/skills` instead of your home |
-| `--link` | `-Link` | Link instead of copy, so edits in this repo apply immediately (Windows falls back to a junction without Developer Mode) |
-| `--uninstall` | `-Uninstall` | Remove them again |
+Remove again:
 
-Without a script, copy each `skills/<name>/` folder into one of those
-directories yourself.
+```bash
+rm -rf ~/.claude/skills/socratic-* ~/.agents/skills/socratic-*
+```
+
+```powershell
+Remove-Item -Recurse -Force "$HOME\.claude\skills\socratic-*", "$HOME\.agents\skills\socratic-*"
+```
 
 ### Claude.ai
 
-```bash
-./install.sh zip
-```
-
-On Windows: `.\install.ps1 zip`. Builds one zip per skill in `dist/`. Upload
-them under Settings → Capabilities → Skills.
+Download the repository as a ZIP from GitHub, zip one folder from `skills/`
+(for example `skills/socratic-concept/`), and upload it under Settings →
+Capabilities → Skills. Repeat for each skill you want.
 
 ## Repository layout
 
 ```
-.claude-plugin/
-  plugin.json        Claude Code plugin manifest
-  marketplace.json   Claude Code marketplace (this repo is its own marketplace)
-.agents/plugins/
-  marketplace.json   Codex marketplace
-plugin.json          Portable plugin manifest, used by Codex
 shared/                         source of the files every skill carries
   references/scale.md           the 0–4 scale and how to ask for it
   references/report-card.md     report card format and rating rules
@@ -152,12 +145,8 @@ skills/
     references/                 the shared files, plus the skill's own
                                 (levels.md, large-topics.md, large-material.md)
     scripts/ste-lint.py         copy of the shared linter
-tools/sync_shared.py  copies shared/ into every skill
-install.sh           plain-skill install and zip packaging (macOS/Linux)
-install.ps1          same for Windows PowerShell
+tools/sync_shared.py            copies shared/ into every skill
 ```
-
-Keep `version` in `plugin.json` and `.claude-plugin/plugin.json` in sync.
 
 Each skill is self-contained, so every skill carries its own copy of the files in
 `shared/`. Edit them only in `shared/`, then copy them into the skills:
